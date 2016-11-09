@@ -29,6 +29,7 @@
     _emailColor = _tintColor;
     _toastColor = [UIColor colorWithWhite:0.f alpha:.6f];
     _toastMessageColor = [UIColor whiteColor];
+    _navigationItemColor = [UIColor whiteColor];
     
     // Fonts
     _navigationTitleFont = [UIFont fontWithName:@"Avenir-Heavy" size:20.f];
@@ -39,6 +40,7 @@
     _nickNameFont = [UIFont fontWithName:@"Avenir" size:24.f];
     _emailFont = [UIFont fontWithName:@"Avenir-Oblique" size:14.f];
     _toastMessageFont = [UIFont fontWithName:@"Avenir" size:14.f];
+    _navigationItemFont = [UIFont fontWithName:@"Avenir" size:16.f];
 }
 
 @end

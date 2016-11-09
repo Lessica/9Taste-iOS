@@ -36,4 +36,7 @@
 @property (nonatomic, strong) UIColor *toastMessageColor;
 @property (nonatomic, strong) UIFont *toastMessageFont;
 
+@property (nonatomic, strong) UIColor *navigationItemColor;
+@property (nonatomic, strong) UIFont *navigationItemFont;
+
 @end

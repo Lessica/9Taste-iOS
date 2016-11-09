@@ -68,6 +68,11 @@
     NSForegroundColorAttributeName: self.appearance.foregroundColor,
     NSFontAttributeName: self.appearance.navigationTitleFont,
     };
+    [[UIBarButtonItem appearance] setTitleTextAttributes:
+     @{
+       NSFontAttributeName: self.appearance.navigationItemFont,
+       } forState:UIControlStateNormal];
+    [UIBarButtonItem appearance].tintColor = self.appearance.navigationItemColor;
     
     // Tab Bar
     [[UITabBarItem appearance] setTitleTextAttributes:
