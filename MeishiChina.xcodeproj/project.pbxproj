@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0F06A79B1DCEF65500753B8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F06A79A1DCEF65500753B8E /* main.m */; };
+		0F06A79E1DCEF65500753B8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F06A79D1DCEF65500753B8E /* AppDelegate.m */; };
+		0F06A7A61DCEF65600753B8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F06A7A51DCEF65600753B8E /* Assets.xcassets */; };
+		0F06A7A91DCEF65600753B8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F06A7A71DCEF65600753B8E /* LaunchScreen.storyboard */; };
+		0F06A7B21DCEF75C00753B8E /* MCMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F06A7B11DCEF75C00753B8E /* MCMainTabBarController.m */; };
+		0F806B7D1DCEFCCD00B9CC7F /* MCFirstNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F806B7C1DCEFCCD00B9CC7F /* MCFirstNavigationController.m */; };
+		0F806B801DCEFD3A00B9CC7F /* MCRecommendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F806B7F1DCEFD3A00B9CC7F /* MCRecommendTableViewController.m */; };
+		0F9194D11DD1B2A70008A89E /* MCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F9194D01DD1B2A70008A89E /* MCResources.bundle */; };
+		0FAA91FE1DD163C9007657E5 /* MCAvatarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA91FD1DD163C9007657E5 /* MCAvatarTableViewCell.m */; };
+		0FAA92011DD16889007657E5 /* MCCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA92001DD16889007657E5 /* MCCommonTableViewCell.m */; };
+		0FAA92051DD170EF007657E5 /* MCCellBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA92041DD170EF007657E5 /* MCCellBadge.m */; };
+		0FBB105C1DD2C28B002D1854 /* MCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB105B1DD2C28B002D1854 /* MCSettingsViewController.m */; };
+		0FBB10601DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB105F1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		0FCD781A1DCF254B00619C09 /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD78191DCF254B00619C09 /* AppConfig.m */; };
+		0FCD78201DCF26D300619C09 /* MCAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD781F1DCF26D300619C09 /* MCAppearance.m */; };
+		0FCD78271DCF2DE100619C09 /* MCLastNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD78261DCF2DE100619C09 /* MCLastNavigationController.m */; };
+		0FCD782A1DCF2E2100619C09 /* MCUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD78291DCF2E2100619C09 /* MCUserTableViewController.m */; };
+		0FD4E9C71DD1A6F00080877C /* MCCellAvatar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4E9C61DD1A6F00080877C /* MCCellAvatar.m */; };
+		4AEB73374CDFDF57B30FA7E6 /* libPods-MeishiChina.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7484A7DE792BE533F0C2EA1A /* libPods-MeishiChina.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0F06A7961DCEF65500753B8E /* MeishiChina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeishiChina.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F06A79A1DCEF65500753B8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0F06A79C1DCEF65500753B8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0F06A79D1DCEF65500753B8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0F06A7A51DCEF65600753B8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0F06A7A81DCEF65600753B8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0F06A7AA1DCEF65600753B8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F06A7B01DCEF75C00753B8E /* MCMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMainTabBarController.h; sourceTree = "<group>"; };
+		0F06A7B11DCEF75C00753B8E /* MCMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMainTabBarController.m; sourceTree = "<group>"; };
+		0F806B7B1DCEFCCD00B9CC7F /* MCFirstNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFirstNavigationController.h; sourceTree = "<group>"; };
+		0F806B7C1DCEFCCD00B9CC7F /* MCFirstNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCFirstNavigationController.m; sourceTree = "<group>"; };
+		0F806B7E1DCEFD3A00B9CC7F /* MCRecommendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRecommendTableViewController.h; sourceTree = "<group>"; };
+		0F806B7F1DCEFD3A00B9CC7F /* MCRecommendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRecommendTableViewController.m; sourceTree = "<group>"; };
+		0F9194D01DD1B2A70008A89E /* MCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MCResources.bundle; sourceTree = "<group>"; };
+		0FAA91FC1DD163C9007657E5 /* MCAvatarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAvatarTableViewCell.h; sourceTree = "<group>"; };
+		0FAA91FD1DD163C9007657E5 /* MCAvatarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAvatarTableViewCell.m; sourceTree = "<group>"; };
+		0FAA91FF1DD16889007657E5 /* MCCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCommonTableViewCell.h; sourceTree = "<group>"; };
+		0FAA92001DD16889007657E5 /* MCCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCommonTableViewCell.m; sourceTree = "<group>"; };
+		0FAA92031DD170EF007657E5 /* MCCellBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCellBadge.h; sourceTree = "<group>"; };
+		0FAA92041DD170EF007657E5 /* MCCellBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCellBadge.m; sourceTree = "<group>"; };
+		0FBB105A1DD2C28B002D1854 /* MCSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSettingsViewController.h; sourceTree = "<group>"; };
+		0FBB105B1DD2C28B002D1854 /* MCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSettingsViewController.m; sourceTree = "<group>"; };
+		0FBB105E1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		0FBB105F1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		0FCD78181DCF254B00619C09 /* AppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConfig.h; sourceTree = "<group>"; };
+		0FCD78191DCF254B00619C09 /* AppConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConfig.m; sourceTree = "<group>"; };
+		0FCD781B1DCF25AD00619C09 /* AppPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppPrefix.pch; sourceTree = "<group>"; };
+		0FCD781E1DCF26D300619C09 /* MCAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAppearance.h; sourceTree = "<group>"; };
+		0FCD781F1DCF26D300619C09 /* MCAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAppearance.m; sourceTree = "<group>"; };
+		0FCD78251DCF2DE100619C09 /* MCLastNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLastNavigationController.h; sourceTree = "<group>"; };
+		0FCD78261DCF2DE100619C09 /* MCLastNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLastNavigationController.m; sourceTree = "<group>"; };
+		0FCD78281DCF2E2100619C09 /* MCUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCUserTableViewController.h; sourceTree = "<group>"; };
+		0FCD78291DCF2E2100619C09 /* MCUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCUserTableViewController.m; sourceTree = "<group>"; };
+		0FD4E9C51DD1A6EF0080877C /* MCCellAvatar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCellAvatar.h; sourceTree = "<group>"; };
+		0FD4E9C61DD1A6F00080877C /* MCCellAvatar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCellAvatar.m; sourceTree = "<group>"; };
+		6C39A9B679732B5849E15424 /* Pods-MeishiChina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeishiChina.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeishiChina/Pods-MeishiChina.release.xcconfig"; sourceTree = "<group>"; };
+		7484A7DE792BE533F0C2EA1A /* libPods-MeishiChina.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MeishiChina.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1ABCE930706779810A1B25 /* Pods-MeishiChina.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeishiChina.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeishiChina/Pods-MeishiChina.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F06A7931DCEF65500753B8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AEB73374CDFDF57B30FA7E6 /* libPods-MeishiChina.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F06A78D1DCEF65500753B8E = {
+			isa = PBXGroup;
+			children = (
+				0F06A7981DCEF65500753B8E /* MeishiChina */,
+				0F06A7971DCEF65500753B8E /* Products */,
+				1EF997F10382B9EC3DDCE58C /* Pods */,
+				668289273B6149D000475447 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0F06A7971DCEF65500753B8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F06A7961DCEF65500753B8E /* MeishiChina.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0F06A7981DCEF65500753B8E /* MeishiChina */ = {
+			isa = PBXGroup;
+			children = (
+				0F06A7B41DCEF97E00753B8E /* Resources */,
+				0F06A7B31DCEF93E00753B8E /* Global */,
+				0F06A7991DCEF65500753B8E /* Supporting Files */,
+				0FCD781C1DCF269200619C09 /* Models */,
+				0FCD78211DCF2D2400619C09 /* Controllers */,
+			);
+			path = MeishiChina;
+			sourceTree = "<group>";
+		};
+		0F06A7991DCEF65500753B8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0F06A7AA1DCEF65600753B8E /* Info.plist */,
+				0F06A79A1DCEF65500753B8E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0F06A7B31DCEF93E00753B8E /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				0FCD781B1DCF25AD00619C09 /* AppPrefix.pch */,
+				0FCD78181DCF254B00619C09 /* AppConfig.h */,
+				0FCD78191DCF254B00619C09 /* AppConfig.m */,
+				0F06A79C1DCEF65500753B8E /* AppDelegate.h */,
+				0F06A79D1DCEF65500753B8E /* AppDelegate.m */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
+		0F06A7B41DCEF97E00753B8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0F9194D01DD1B2A70008A89E /* MCResources.bundle */,
+				0FCD78171DCF20A600619C09 /* Localization */,
+				0F06A7A51DCEF65600753B8E /* Assets.xcassets */,
+				0F06A7A71DCEF65600753B8E /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0FAA91FB1DD163B2007657E5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0FAA92031DD170EF007657E5 /* MCCellBadge.h */,
+				0FAA92041DD170EF007657E5 /* MCCellBadge.m */,
+				0FD4E9C51DD1A6EF0080877C /* MCCellAvatar.h */,
+				0FD4E9C61DD1A6F00080877C /* MCCellAvatar.m */,
+				0FAA91FC1DD163C9007657E5 /* MCAvatarTableViewCell.h */,
+				0FAA91FD1DD163C9007657E5 /* MCAvatarTableViewCell.m */,
+				0FAA91FF1DD16889007657E5 /* MCCommonTableViewCell.h */,
+				0FAA92001DD16889007657E5 /* MCCommonTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		0FCD78171DCF20A600619C09 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
+		0FCD781C1DCF269200619C09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0FCD781D1DCF26A600619C09 /* Appearance */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0FCD781D1DCF26A600619C09 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				0FCD781E1DCF26D300619C09 /* MCAppearance.h */,
+				0FCD781F1DCF26D300619C09 /* MCAppearance.m */,
+			);
+			name = Appearance;
+			sourceTree = "<group>";
+		};
+		0FCD78211DCF2D2400619C09 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FCD78241DCF2D7000619C09 /* RootViewController */,
+				0FCD78221DCF2D3A00619C09 /* NavigationControllers */,
+				0FCD78231DCF2D5D00619C09 /* MainControllers */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0FCD78221DCF2D3A00619C09 /* NavigationControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FBB105E1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.h */,
+				0FBB105F1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m */,
+				0F806B7B1DCEFCCD00B9CC7F /* MCFirstNavigationController.h */,
+				0F806B7C1DCEFCCD00B9CC7F /* MCFirstNavigationController.m */,
+				0FCD78251DCF2DE100619C09 /* MCLastNavigationController.h */,
+				0FCD78261DCF2DE100619C09 /* MCLastNavigationController.m */,
+			);
+			name = NavigationControllers;
+			sourceTree = "<group>";
+		};
+		0FCD78231DCF2D5D00619C09 /* MainControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0FAA91FB1DD163B2007657E5 /* Cells */,
+				0F806B7E1DCEFD3A00B9CC7F /* MCRecommendTableViewController.h */,
+				0F806B7F1DCEFD3A00B9CC7F /* MCRecommendTableViewController.m */,
+				0FCD78281DCF2E2100619C09 /* MCUserTableViewController.h */,
+				0FCD78291DCF2E2100619C09 /* MCUserTableViewController.m */,
+				0FBB105A1DD2C28B002D1854 /* MCSettingsViewController.h */,
+				0FBB105B1DD2C28B002D1854 /* MCSettingsViewController.m */,
+			);
+			name = MainControllers;
+			sourceTree = "<group>";
+		};
+		0FCD78241DCF2D7000619C09 /* RootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F06A7B01DCEF75C00753B8E /* MCMainTabBarController.h */,
+				0F06A7B11DCEF75C00753B8E /* MCMainTabBarController.m */,
+			);
+			name = RootViewController;
+			sourceTree = "<group>";
+		};
+		1EF997F10382B9EC3DDCE58C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8A1ABCE930706779810A1B25 /* Pods-MeishiChina.debug.xcconfig */,
+				6C39A9B679732B5849E15424 /* Pods-MeishiChina.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		668289273B6149D000475447 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7484A7DE792BE533F0C2EA1A /* libPods-MeishiChina.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0F06A7951DCEF65500753B8E /* MeishiChina */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0F06A7AD1DCEF65600753B8E /* Build configuration list for PBXNativeTarget "MeishiChina" */;
+			buildPhases = (
+				275E10530CFE47664C59DFD2 /* Check Pods Manifest.lock */,
+				0F06A7921DCEF65500753B8E /* Sources */,
+				0F06A7931DCEF65500753B8E /* Frameworks */,
+				0F06A7941DCEF65500753B8E /* Resources */,
+				A0B143265D34815264FC63AC /* Embed Pods Frameworks */,
+				078C35C18A9985705AAF7443 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MeishiChina;
+			productName = MeishiChina;
+			productReference = 0F06A7961DCEF65500753B8E /* MeishiChina.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0F06A78E1DCEF65500753B8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Zheng;
+				TargetAttributes = {
+					0F06A7951DCEF65500753B8E = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = GXZ23M5TP2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0F06A7911DCEF65500753B8E /* Build configuration list for PBXProject "MeishiChina" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0F06A78D1DCEF65500753B8E;
+			productRefGroup = 0F06A7971DCEF65500753B8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0F06A7951DCEF65500753B8E /* MeishiChina */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F06A7941DCEF65500753B8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F06A7A91DCEF65600753B8E /* LaunchScreen.storyboard in Resources */,
+				0F06A7A61DCEF65600753B8E /* Assets.xcassets in Resources */,
+				0F9194D11DD1B2A70008A89E /* MCResources.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		078C35C18A9985705AAF7443 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeishiChina/Pods-MeishiChina-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		275E10530CFE47664C59DFD2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A0B143265D34815264FC63AC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MeishiChina/Pods-MeishiChina-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0F06A7921DCEF65500753B8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FBB10601DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				0FD4E9C71DD1A6F00080877C /* MCCellAvatar.m in Sources */,
+				0F806B7D1DCEFCCD00B9CC7F /* MCFirstNavigationController.m in Sources */,
+				0FAA92011DD16889007657E5 /* MCCommonTableViewCell.m in Sources */,
+				0FCD78201DCF26D300619C09 /* MCAppearance.m in Sources */,
+				0F06A7B21DCEF75C00753B8E /* MCMainTabBarController.m in Sources */,
+				0FBB105C1DD2C28B002D1854 /* MCSettingsViewController.m in Sources */,
+				0F06A79E1DCEF65500753B8E /* AppDelegate.m in Sources */,
+				0F06A79B1DCEF65500753B8E /* main.m in Sources */,
+				0F806B801DCEFD3A00B9CC7F /* MCRecommendTableViewController.m in Sources */,
+				0FAA92051DD170EF007657E5 /* MCCellBadge.m in Sources */,
+				0FCD781A1DCF254B00619C09 /* AppConfig.m in Sources */,
+				0FCD78271DCF2DE100619C09 /* MCLastNavigationController.m in Sources */,
+				0FAA91FE1DD163C9007657E5 /* MCAvatarTableViewCell.m in Sources */,
+				0FCD782A1DCF2E2100619C09 /* MCUserTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0F06A7A71DCEF65600753B8E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0F06A7A81DCEF65600753B8E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0F06A7AB1DCEF65600753B8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0F06A7AC1DCEF65600753B8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0F06A7AE1DCEF65600753B8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A1ABCE930706779810A1B25 /* Pods-MeishiChina.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GXZ23M5TP2;
+				GCC_PREFIX_HEADER = MeishiChina/AppPrefix.pch;
+				INFOPLIST_FILE = MeishiChina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.MeishiChina;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0F06A7AF1DCEF65600753B8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C39A9B679732B5849E15424 /* Pods-MeishiChina.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = GXZ23M5TP2;
+				GCC_PREFIX_HEADER = MeishiChina/AppPrefix.pch;
+				INFOPLIST_FILE = MeishiChina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darwindev.MeishiChina;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0F06A7911DCEF65500753B8E /* Build configuration list for PBXProject "MeishiChina" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F06A7AB1DCEF65600753B8E /* Debug */,
+				0F06A7AC1DCEF65600753B8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0F06A7AD1DCEF65600753B8E /* Build configuration list for PBXNativeTarget "MeishiChina" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F06A7AE1DCEF65600753B8E /* Debug */,
+				0F06A7AF1DCEF65600753B8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0F06A78E1DCEF65500753B8E /* Project object */;
+}

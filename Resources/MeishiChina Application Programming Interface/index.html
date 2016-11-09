@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>MeishiChina Application Programming Interface</title>
+	</head>
+<body>
+<h1>MeishiChina Application Programming Interface</h1>
+
+<h2>Common</h2>
+
+<p>POST /api/meishi</p>
+
+<p><strong> code 0 - success</strong></p>
+
+<p><strong> code 1 - not found</strong></p>
+
+<p><strong> code 2 - invalid</strong></p>
+
+<p><strong> code 3 - denied</strong></p>
+
+<p><strong> code 4 - failed</strong></p>
+
+<h2>Register</h2>
+
+<h3>Request</h3>
+
+<pre><code>{
+    &quot;action&quot;: &quot;register&quot;,
+    &quot;form&quot;: {
+        &quot;username&quot;: &quot;i_82&quot;,
+        &quot;password&quot;: &quot;46a978a3b42aeeb8d1fc92f79ac4a7547e04125b&quot;
+    }
+}
+</code></pre>
+
+<h3>Response</h3>
+
+<pre><code>{
+    &quot;code&quot;: 0,
+    &quot;data&quot;: {
+        &quot;user_id&quot;: 10001
+    }
+}
+</code></pre>
+
+<h2>Login</h2>
+
+<h3>Request</h3>
+
+<pre><code>{
+    &quot;action&quot;: &quot;login&quot;,
+    &quot;form&quot;: {
+        &quot;user_name&quot;: &quot;i_82&quot;
+        &quot;password&quot;: &quot;46a978a3b42aeeb8d1fc92f79ac4a7547e04125b&quot;
+    }
+}
+</code></pre>
+
+<h3>Response</h3>
+
+<pre><code>{
+    &quot;code&quot;: 0,
+    &quot;data&quot;: {
+        &quot;user_id&quot;: 10001
+    }
+ }
+</code></pre>
+
+<h2>Fetch Survey</h2>
+
+<h3>Request</h3>
+
+<pre><code>{
+    &quot;action&quot;: &quot;fetch_survey&quot;,
+    &quot;form&quot;: {
+        &quot;user_id&quot;: 10001
+    }
+}
+</code></pre>
+
+<h3>Response</h3>
+
+<pre><code>{
+    &quot;code&quot;: 0,
+    &quot;data&quot;: {
+        &quot;title&quot;: &quot;Survey Title&quot;,
+        &quot;created_at&quot;: 1478519338,
+        &quot;survey&quot;: [
+            {
+                &quot;header&quot;: &quot;Question A&quot;,
+                &quot;footer&quot;: &quot;Introduce how to answer this question...&quot;,
+                &quot;type&quot;: &quot;choice&quot;,
+                &quot;id&quot;: 1,
+                &quot;detail&quot;: {
+                    &quot;min_num&quot;: 1,
+                    &quot;max_num&quot;: 2,
+                    &quot;choices&quot;: [
+                        &quot;Choice A&quot;,
+                        &quot;Choice B&quot;,
+                        &quot;Choice C&quot;,
+                        &quot;Choice D&quot;,
+                    ]
+                }
+            }，
+            {
+                &quot;header&quot;: &quot;Question B&quot;,
+                &quot;footer&quot;: &quot;Introduce how to answer this question...&quot;,
+                &quot;type&quot;: &quot;blank&quot;,
+                &quot;id&quot;: 2,
+                &quot;detail&quot;: {
+                    &quot;min_length&quot;: 5,
+                    &quot;max_length&quot;: 100,
+                    &quot;placeholder&quot;: &quot;Text Here...&quot;,
+                    &quot;regex&quot;: &quot;[0-9a-zA-Z]&quot;,
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+
+<h2>Submit Survey</h2>
+
+<h3>Request</h3>
+
+<pre><code>{
+    &quot;action&quot;: &quot;submit_survey&quot;,
+    &quot;form&quot;: {
+        &quot;user_id&quot;: 10001,
+        &quot;form&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;type&quot;: &quot;choice&quot;,
+                &quot;answer&quot;: {
+                    &quot;choice&quot;: [ 0, 2, 3 ]
+                }
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;type&quot;: &quot;blank&quot;,
+                &quot;answer&quot;: {
+                    &quot;text&quot;: &quot;My answer is ...&quot;
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+
+<h3>Response</h3>
+
+<pre><code>{
+    &quot;code&quot;: 0
+}
+</code></pre>
+
+<h2>Fetch Recommendation</h2>
+
+<h3>Request</h3>
+
+<pre><code>{
+    &quot;action&quot;: &quot;fetch_recommendation&quot;,
+    &quot;form&quot;: {
+        &quot;user_id&quot;: 10001
+    }
+}
+</code></pre>
+
+<h3>Response</h3>
+
+<pre><code>{
+     &quot;code&quot;: 0,
+     &quot;data&quot;: {
+         &quot;list&quot;: [
+             {
+                 &quot;recipeId&quot;: 1,
+                 &quot;recipeFirstImageUrl&quot;: &quot;http://i3.meishichina.com/attachment/recipe/200910/200910120907019.jpg@!p800&quot;,
+                 &quot;recipeMaterials&quot;: [],
+                 &quot;authorId&quot;: 93505,
+                 &quot;recipeName&quot;: &quot;红烧鸡翅&quot;,
+                 &quot;recipeTags&quot;: [
+                     &quot;烧&quot;, &quot;一小时&quot;, &quot;普通&quot;
+                 ],
+                 &quot;authorName&quot;: &quot;陈绪荣&quot;,
+                 &quot;recipeTip&quot;: &quot;特点：色泽酱红，鲜香酥嫩。&quot;
+             }
+         ]
+     }
+}
+</code></pre>
+
+<h2>Rating</h2>
+
+<h3>Request</h3>
+
+<pre><code>{
+    &quot;action&quot;: &quot;rate&quot;,
+    &quot;form&quot;: {
+        &quot;user_id&quot;: 10001,
+        &quot;recipe_id&quot;: 1,
+        &quot;rate&quot;: 5,
+    }
+}
+</code></pre>
+
+<h3>Response</h3>
+
+<pre><code>{
+    &quot;code&quot;: 0
+}
+</code></pre>
+
+</body>
+</html>
+

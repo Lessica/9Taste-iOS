@@ -1,0 +1,29 @@
+//
+//  AppPrefix.pch
+//  MeishiChina
+//
+//  Created by Zheng on 06/11/2016.
+//  Copyright © 2016 Zheng. All rights reserved.
+//
+
+#ifndef AppPrefix_pch
+#define AppPrefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "AppConfig.h"
+#import <Toast/UIView+Toast.h>
+#import <YYCategories/YYCategories.h>
+#import <YYWebImage/YYWebImage.h>
+#import <YYImage/YYImage.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
+
+#define MConfig ([AppConfig sharedInstance])
+#ifdef DEBUG
+#define MCLog(fmt, ...) NSLog((@"\n[%@:%d]\n%s\n" fmt), [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#else
+#define NSLog(...);
+#define MCLog(...);
+#endif
+
+#endif /* AppPrefix_pch */
