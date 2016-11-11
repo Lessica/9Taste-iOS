@@ -216,13 +216,15 @@ static NSString * const MCUserTableViewSectionCommonRowCellIdentifier = @"MCUser
             
         }
     } else {
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        if ([cell isKindOfClass:[MCCommonTableViewCell class]]) {
+        if (indexPath.section == MCUserTableViewSectionCard) {
+            if (indexPath.row == MCUserTableViewSectionCardRowHead) {
 #warning "Debug Badge 12"
 #ifdef DEBUG
-            [(MCCommonTableViewCell *)cell setDisplayValue:0];
-            [self.navigationController.tabBarItem setBadgeValue:nil];
+                UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+                [(MCCommonTableViewCell *)cell setDisplayValue:0];
+                [self.navigationController.tabBarItem setBadgeValue:nil];
 #endif
+            }
         }
     }
 }

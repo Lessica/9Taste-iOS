@@ -18,6 +18,7 @@
 #import <YYImage/YYImage.h>
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
+// Debug
 #define MConfig ([AppConfig sharedInstance])
 #ifdef DEBUG
 #define MCLog(fmt, ...) NSLog((@"\n[%@:%d]\n%s\n" fmt), [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);
@@ -25,5 +26,8 @@
 #define NSLog(...);
 #define MCLog(...);
 #endif
+
+// Version
+#define IOS_VERSION_10 (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_9_x_Max) ? (YES) : (NO)  
 
 #endif /* AppPrefix_pch */

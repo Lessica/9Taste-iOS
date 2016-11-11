@@ -40,12 +40,14 @@
 #warning "Debug Badge 12"
 #ifdef DEBUG
     [self.tabBarItem setBadgeValue:@"12"];
-    [self.tabBarItem setBadgeColor:MConfig.appearance.badgeColor];
-    [self.tabBarItem setBadgeTextAttributes:
-  @{
-    NSFontAttributeName: MConfig.appearance.badgeTextFont,
-    NSForegroundColorAttributeName: MConfig.appearance.badgeTextColor,
-    } forState:UIControlStateNormal];
+    if (IOS_VERSION_10) {
+        [self.tabBarItem setBadgeColor:MConfig.appearance.badgeColor];
+        [self.tabBarItem setBadgeTextAttributes:
+         @{
+           NSFontAttributeName: MConfig.appearance.badgeTextFont,
+           NSForegroundColorAttributeName: MConfig.appearance.badgeTextColor,
+           } forState:UIControlStateNormal];
+    }
 #endif
 }
 
