@@ -18,8 +18,11 @@
 #import <YYImage/YYImage.h>
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
-// Debug
 #define MConfig ([AppConfig sharedInstance])
+#define MConfigWithName(key) ([MConfig.storage objectForKey:key])
+#define MNet (MConfig.networkService)
+
+// Debug
 #ifdef DEBUG
 #define MCLog(fmt, ...) NSLog((@"\n[%@:%d]\n%s\n" fmt), [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);
 #else

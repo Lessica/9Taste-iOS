@@ -9,14 +9,17 @@
 #import "AppConfig.h"
 #import <UIKit/UIKit.h>
 
-#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
-#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
-#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+static NSString * const MCKeyStorageDatabase = @"MCKeyStorageDatabase";
 
-@implementation AppConfig {
+NSString * const MConfigStorageAppearanceKey = @"MConfigAppearanceKey";
+NSString * const MConfigStorageApiUrlKey = @"MConfigApiUrlKey";
+NSString * const MConfigStorageUserStateKey = @"MConfigStorageUserStateKey";
+
+@implementation AppConfig
+{
     MCAppearance *_appearance;
+    YYCache *_storage;
+    MCNetwork *_networkService;
 }
 
 + (instancetype)sharedInstance
@@ -33,59 +36,107 @@
 {
     if (self = [super init])
     {
+        [self setupStorage];
         [self setupAppearance];
+        [self setupNetwork];
     }
     return self;
+}
+
+#pragma mark - Shared Getters
+
+- (YYCache *)storage
+{
+    if (!_storage) {
+        _storage = [[YYCache alloc] initWithName:MCKeyStorageDatabase];
+    }
+    return _storage;
 }
 
 - (MCAppearance *)appearance
 {
     if (!_appearance)
     {
-        _appearance = [[MCAppearance alloc] init];
+        NSString *appearanceClassName = (NSString *)[self.storage objectForKey:MConfigStorageAppearanceKey];
+        MCLog(@"Load Appearance: %@", appearanceClassName);
+        _appearance = (MCAppearance *)[[NSClassFromString(appearanceClassName) alloc] init];
     }
     return _appearance;
 }
 
+- (MCNetwork *)networkService {
+    if (!_networkService)
+    {
+        NSString *apiURL = (NSString *)[self.storage objectForKey:MConfigStorageApiUrlKey];
+        MCLog(@"Load API: %@", apiURL);
+        MCNetwork *networkService = [[MCNetwork alloc] initWithURL:[NSURL URLWithString:apiURL]];
+        _networkService = networkService;
+    }
+    return _networkService;
+}
+
+#pragma mark - Setups
+
+- (void)setupStorage
+{
+    YYCache *storage = [self storage];
+    NSDictionary *defaultConfig = @{
+        MConfigStorageAppearanceKey: @"MCAppearanceDefault",
+        MConfigStorageApiUrlKey: @"http://192.168.0.111:8000/meishi",
+    };
+    // Process Default Config
+    for (NSString *configKey in defaultConfig.allKeys) {
+        BOOL containsKey = [storage containsObjectForKey:configKey];
+        if (!containsKey)
+        {
+            [storage setObject:defaultConfig[configKey] forKey:configKey];
+        }
+    }
+}
+
 - (void)setupAppearance
 {
+    MCAppearance *appearance = [self appearance];
+
     // Toast
     [CSToastManager setTapToDismissEnabled:YES];
     [CSToastManager setDefaultDuration:3.f];
     [CSToastManager setQueueEnabled:NO];
     [CSToastManager setDefaultPosition:CSToastPositionCenter];
     
-    [CSToastManager sharedStyle].backgroundColor = self.appearance.toastColor;
-    [CSToastManager sharedStyle].messageColor = self.appearance.toastMessageColor;
-    [CSToastManager sharedStyle].messageFont = self.appearance.toastMessageFont;
+    [CSToastManager sharedStyle].backgroundColor = appearance.toastColor;
+    [CSToastManager sharedStyle].messageColor = appearance.toastMessageColor;
+    [CSToastManager sharedStyle].messageFont = appearance.toastMessageFont;
     [CSToastManager sharedStyle].activitySize = CGSizeMake(80.f, 80.f);
+
+    [UIActivityIndicatorView appearance].color = appearance.toastActivityColor;
     
     // Navigation Bar
-    [UINavigationBar appearance].barTintColor = self.appearance.tintColor;
-    [UINavigationBar appearance].tintColor = self.appearance.foregroundColor;
+    [UINavigationBar appearance].barTintColor = appearance.tintColor;
+    [UINavigationBar appearance].tintColor = appearance.foregroundColor;
     [UINavigationBar appearance].titleTextAttributes =
   @{
-    NSForegroundColorAttributeName: self.appearance.foregroundColor,
-    NSFontAttributeName: self.appearance.navigationTitleFont,
+    NSForegroundColorAttributeName: appearance.foregroundColor,
+    NSFontAttributeName: appearance.navigationTitleFont,
     };
     [[UIBarButtonItem appearance] setTitleTextAttributes:
      @{
-       NSFontAttributeName: self.appearance.navigationItemFont,
+       NSFontAttributeName: appearance.navigationItemFont,
        } forState:UIControlStateNormal];
-    [UIBarButtonItem appearance].tintColor = self.appearance.navigationItemColor;
+    [UIBarButtonItem appearance].tintColor = appearance.navigationItemColor;
     
     // Tab Bar
     [[UITabBarItem appearance] setTitleTextAttributes:
   @{
-    NSFontAttributeName: self.appearance.tabbarTitleFont,
+    NSFontAttributeName: appearance.tabbarTitleFont,
     } forState:UIControlStateNormal];
-    [UITabBar appearance].tintColor = self.appearance.tintColor;
-    
-    // #import "MCCellBadge.h"
-    // #import "MCCommonTableViewCell.h"
-    // #import "MCCellAvatar.h"
-    // #import "MCAvatarTableViewCell.h"
-    
+    [UITabBar appearance].tintColor = appearance.tintColor;
+}
+
+- (void)setupNetwork
+{
+    [self networkService];
+
 }
 
 @end

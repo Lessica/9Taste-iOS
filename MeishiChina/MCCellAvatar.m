@@ -16,21 +16,9 @@
 
 @implementation MCCellAvatar
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setup];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        [self setup];
-    }
-    return self;
-}
-
 - (void)setup {
+    [super setup];
+
     self.userInteractionEnabled = YES;
     [self.layer setCornerRadius:self.height / 2];
     [self.layer setMasksToBounds:YES];

@@ -6,14 +6,14 @@
 //  Copyright © 2016 Zheng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MCTableViewCell.h"
 #import "MCCellAvatar.h"
 
-@interface MCAvatarTableViewCell : UITableViewCell
-@property (nonatomic, strong) NSURL *avatarImageUrl;
-@property (nonatomic, weak) id<MCCellAvatarDelegate> avatarDelegate;
+@interface MCAvatarTableViewCell : MCTableViewCell
 
-@property (nonatomic, strong) NSString *userNameText;
-@property (nonatomic, strong) NSString *userEmailText;
+@property (nonatomic, strong) NSURL *avatarImageUrl; // Transfer
+@property (nonatomic, weak) id<MCCellAvatarDelegate> avatarDelegate; // Transfer
+@property (nonatomic, strong) NSString *userNameText; // Transfer
+@property (nonatomic, strong) NSString *userEmailText; // Transfer
 
 @end

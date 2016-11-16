@@ -6,8 +6,8 @@
 //  Copyright © 2016 Zheng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MCNavigationController.h"
 
-@interface MCFirstNavigationController : UINavigationController
+@interface MCFirstNavigationController : MCNavigationController
 
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Zheng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MCImageView.h"
 
 @class MCCellAvatar;
 
@@ -15,7 +15,7 @@
 
 @end
 
-@interface MCCellAvatar : UIImageView
+@interface MCCellAvatar : MCImageView
 @property (nonatomic, weak) id<MCCellAvatarDelegate> delegate;
 
 - (void)setHidesImageMaskView:(BOOL)hides;

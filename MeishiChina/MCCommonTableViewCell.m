@@ -20,28 +20,9 @@ static CGFloat const MCCommonTableViewCellBadgeHeight = 20.f;
 
 @implementation MCCommonTableViewCell
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setup];
-    }
-    return self;
-}
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setup];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        [self setup];
-    }
-    return self;
-}
-
 - (void)setup {
+    [super setup];
+
     self.separatorInset = UIEdgeInsetsZero;
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -56,7 +37,7 @@ static CGFloat const MCCommonTableViewCellBadgeHeight = 20.f;
     self.badgeView.center = CGPointMake(self.width - MCCommonTableViewCellBadgeRightMargin - self.badgeView.width / 2, self.height / 2);
 }
 
-#pragma mark - Getters
+#pragma mark - UIView Getters
 
 - (MCCellBadge *)badgeView {
     if (!_badgeView) {
@@ -67,22 +48,17 @@ static CGFloat const MCCommonTableViewCellBadgeHeight = 20.f;
     return _badgeView;
 }
 
-#pragma mark - Setters
+#pragma mark - Foundation Getters
 
-- (void)setDisplayValue:(NSUInteger)displayValue {
-    _displayValue = displayValue;
-    [self.badgeView setDisplayValue:displayValue];
-    if (displayValue == 0) {
-        self.badgeView.hidden = YES;
-    } else {
-        self.badgeView.hidden = NO;
-    }
+- (NSUInteger)displayValue {
+    return self.badgeView.displayValue;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+#pragma mark - Foundation Setters
 
-    // Configure the view for the selected state
+- (void)setDisplayValue:(NSUInteger)displayValue {
+    [self.badgeView setDisplayValue:displayValue];
+    self.badgeView.hidden = (displayValue == 0);
 }
 
 @end

@@ -11,5 +11,6 @@ target 'MeishiChina' do
     pod 'YYImage'
     pod 'YYWebImage'
     pod 'YYCategories'
+    pod 'FLEX', :configurations => ['Debug']
 end
 

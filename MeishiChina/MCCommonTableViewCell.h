@@ -6,9 +6,10 @@
 //  Copyright © 2016 Zheng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MCTableViewCell.h"
 
-@interface MCCommonTableViewCell : UITableViewCell
-@property (nonatomic, assign) NSUInteger displayValue;
+@interface MCCommonTableViewCell : MCTableViewCell
+
+@property (nonatomic, assign) NSUInteger displayValue; // Transfer
 
 @end

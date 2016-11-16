@@ -6,8 +6,8 @@
 //  Copyright © 2016 Zheng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MCTableViewController.h"
 
-@interface MCRecommendTableViewController : UITableViewController
+@interface MCRecommendTableViewController : MCTableViewController
 
 @end

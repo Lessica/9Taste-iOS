@@ -15,11 +15,6 @@
 
 @implementation MCFirstNavigationController
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return self.topViewController.preferredStatusBarStyle;
-}
-
 - (instancetype)init
 {
     MCRecommendTableViewController *recommendController = [[MCRecommendTableViewController alloc] initWithStyle:UITableViewStylePlain];

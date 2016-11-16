@@ -10,7 +10,7 @@
 
 static CGFloat const MCAvatarTableViewCellAvatarLeftMargin = 16.f;
 static CGFloat const MCAvatarTableViewCellAvatarRightMargin = 16.f;
-static CGFloat const MCAvatarTableViewCellLabelTopMargin = 2.f;
+static CGFloat const MCAvatarTableViewCellLabelTopMargin = 6.f;
 static CGFloat const MCAvatarTableViewCellLabelMiddleMargin = 4.f;
 
 @interface MCAvatarTableViewCell ()
@@ -22,44 +22,33 @@ static CGFloat const MCAvatarTableViewCellLabelMiddleMargin = 4.f;
 
 @implementation MCAvatarTableViewCell
 
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setup];
-    }
-    return self;
-}
-
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setup];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        [self setup];
-    }
-    return self;
-}
-
 - (void)setup {
+    [super setup];
+
     self.separatorInset = UIEdgeInsetsZero;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     [self addSubview:self.avatarView];
     [self addSubview:self.userNameLabel];
     [self addSubview:self.userEmailLabel];
+    self.userNameText = nil;
+    self.userEmailText = nil;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.avatarView.center = CGPointMake(MCAvatarTableViewCellAvatarLeftMargin + self.avatarView.width / 2, self.height / 2);
-    self.userNameLabel.origin = CGPointMake(MCAvatarTableViewCellAvatarLeftMargin + self.avatarView.width + MCAvatarTableViewCellAvatarRightMargin, self.avatarView.origin.y + MCAvatarTableViewCellLabelTopMargin);
-    self.userEmailLabel.origin = CGPointMake(self.userNameLabel.origin.x, self.userNameLabel.origin.y + self.userNameLabel.height + MCAvatarTableViewCellLabelMiddleMargin);
+    self.avatarView.center = CGPointMake(
+            MCAvatarTableViewCellAvatarLeftMargin + self.avatarView.width / 2,
+            self.height / 2);
+    self.userNameLabel.origin = CGPointMake(
+            MCAvatarTableViewCellAvatarLeftMargin + self.avatarView.width + MCAvatarTableViewCellAvatarRightMargin,
+            self.avatarView.origin.y + MCAvatarTableViewCellLabelTopMargin);
+    self.userEmailLabel.origin = CGPointMake(
+            self.userNameLabel.origin.x,
+            self.userNameLabel.origin.y + self.userNameLabel.height + MCAvatarTableViewCellLabelMiddleMargin);
 }
 
-#pragma mark - Getters
+#pragma mark - UIView Getters
 
 - (MCCellAvatar *)avatarView {
     if (!_avatarView) {
@@ -72,10 +61,8 @@ static CGFloat const MCAvatarTableViewCellLabelMiddleMargin = 4.f;
 - (UILabel *)userNameLabel {
     if (!_userNameLabel) {
         UILabel *userNameLabel = [[UILabel alloc] init];
-        userNameLabel.text = NSLocalizedString(@"Not Login", nil);
         userNameLabel.font = MConfig.appearance.nickNameFont;
         userNameLabel.textColor = MConfig.appearance.nickNameColor;
-        [userNameLabel sizeToFit];
         _userNameLabel = userNameLabel;
     }
     return _userNameLabel;
@@ -84,39 +71,58 @@ static CGFloat const MCAvatarTableViewCellLabelMiddleMargin = 4.f;
 - (UILabel *)userEmailLabel {
     if (!_userEmailLabel) {
         UILabel *userEmailLabel = [[UILabel alloc] init];
-        userEmailLabel.text = NSLocalizedString(@"Tap to Login", nil);
         userEmailLabel.font = MConfig.appearance.emailFont;
         userEmailLabel.textColor = MConfig.appearance.emailColor;
-        [userEmailLabel sizeToFit];
         _userEmailLabel = userEmailLabel;
     }
     return _userEmailLabel;
 }
 
-#pragma mark - Setters
+#pragma mark - Foundation Getters
+
+- (NSURL *)avatarImageUrl {
+    return self.avatarView.yy_imageURL;
+}
+
+- (id <MCCellAvatarDelegate>)avatarDelegate {
+    return self.avatarView.delegate;
+}
+
+- (NSString *)userNameText {
+    return self.userNameLabel.text;
+}
+
+- (NSString *)userEmailText {
+    return self.userEmailLabel.text;
+}
+
+#pragma mark - Foundation Setters
 
 - (void)setAvatarImageUrl:(NSURL *)avatarImageUrl {
-    _avatarImageUrl = avatarImageUrl;
     [self.avatarView yy_setImageWithURL:avatarImageUrl
                                 options:YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation];
     [self.avatarView setHidesImageMaskView:YES];
 }
 
 - (void)setAvatarDelegate:(id<MCCellAvatarDelegate>)avatarDelegate {
-    _avatarDelegate = avatarDelegate;
-    self.avatarView.delegate = self.avatarDelegate;
+    self.avatarView.delegate = avatarDelegate;
 }
 
-
 - (void)setUserNameText:(NSString *)userNameText {
-    _userNameText = userNameText;
-    self.userNameLabel.text = userNameText;
+    if (userNameText) {
+        self.userNameLabel.text = userNameText;
+    } else {
+        self.userNameLabel.text = NSLocalizedString(@"Not Login", nil);
+    }
     [self.userNameLabel sizeToFit];
 }
 
 - (void)setUserEmailText:(NSString *)userEmailText {
-    _userEmailText = userEmailText;
-    self.userEmailLabel.text = userEmailText;
+    if (userEmailText) {
+        self.userEmailLabel.text = userEmailText;
+    } else {
+        self.userEmailLabel.text = NSLocalizedString(@"Tap to Login", nil);
+    }
     [self.userEmailLabel sizeToFit];
 }
 

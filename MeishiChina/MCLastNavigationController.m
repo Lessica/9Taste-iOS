@@ -15,11 +15,6 @@
 
 @implementation MCLastNavigationController
 
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return self.topViewController.preferredStatusBarStyle;
-}
-
 - (instancetype)init
 {
     MCUserTableViewController *userController = [[MCUserTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
@@ -37,7 +32,6 @@
     self.tabBarItem.title = NSLocalizedString(@"Me", nil);
     self.tabBarItem.image = [UIImage imageNamed:@"person"];
     
-#warning "Debug Badge 12"
 #ifdef DEBUG
     [self.tabBarItem setBadgeValue:@"12"];
     if (IOS_VERSION_10) {
@@ -49,10 +43,6 @@
            } forState:UIControlStateNormal];
     }
 #endif
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 }
 
 @end

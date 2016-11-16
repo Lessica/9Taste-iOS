@@ -7,10 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YYCache/YYCache.h>
 #import "MCAppearance.h"
+#import "MCNetwork.h"
 
 @interface AppConfig : NSObject
+
+@property (nonatomic, strong, readonly) YYCache *storage;
 @property (nonatomic, strong, readonly) MCAppearance *appearance;
+@property (nonatomic, strong, readonly) MCNetwork *networkService;
+
+extern NSString * const MConfigStorageAppearanceKey;
+extern NSString * const MConfigStorageApiUrlKey;
+extern NSString * const MConfigStorageUserStateKey;
+
 + (instancetype)sharedInstance;
 
 @end
