@@ -125,7 +125,11 @@ static CGFloat const MCLoginViewLogoHeight = 60.f;
     if (self.isEditing) {
         [self resignKeyboard];
     }
-    [self updateScrollViewConstraintsWithScreenSize:size];
+    [coordinator animateAlongsideTransition:^(id <UIViewControllerTransitionCoordinatorContext> context) {
+        [self updateScrollViewConstraintsWithScreenSize:size];
+    } completion:^(id <UIViewControllerTransitionCoordinatorContext> context) {
+
+    }];
 }
 
 #pragma mark - UIView Getters

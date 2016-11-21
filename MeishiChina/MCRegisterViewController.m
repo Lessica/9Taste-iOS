@@ -126,11 +126,14 @@ static CGFloat const MCRegisterViewLogoHeight = 60.f;
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator {
-    if (self.isEditing)
-    {
+    if (self.isEditing) {
         [self resignKeyboard];
     }
-    [self updateScrollViewConstraintsWithScreenSize:size];
+    [coordinator animateAlongsideTransition:^(id <UIViewControllerTransitionCoordinatorContext> context) {
+        [self updateScrollViewConstraintsWithScreenSize:size];
+    } completion:^(id <UIViewControllerTransitionCoordinatorContext> context) {
+
+    }];
 }
 
 #pragma mark - UIView Getters

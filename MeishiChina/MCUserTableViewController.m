@@ -57,6 +57,10 @@ static NSString * const MCUserTableViewSectionCommonRowCellIdentifier = @"MCUser
 {
     [super viewDidLoad];
     
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.navigationController.navigationBar setTranslucent:NO];
+    
     self.title = NSLocalizedString(@"Me", nil);
     self.navigationItem.rightBarButtonItem = self.settingsButton;
 }
@@ -190,7 +194,7 @@ static NSString * const MCUserTableViewSectionCommonRowCellIdentifier = @"MCUser
         {
             if (indexPath.row == MCUserTableViewSectionCardRowHead)
             {
-                cell.textLabel.text = NSLocalizedString(@"Survey Cards", nil);
+                cell.textLabel.text = NSLocalizedString(@"Message Cards", nil);
 #ifdef DEBUG
                 cell.displayValue = 12;
 #endif

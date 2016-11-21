@@ -76,4 +76,35 @@
 @property (nonatomic, strong) UIColor *buttonTitleColor;
 @property (nonatomic, strong) UIFont *buttonTitleFont;
 
+#pragma mark - Header
+
+@property (nonatomic, strong) UIColor *headerStateColor;
+@property (nonatomic, strong) UIFont *headerStateFont;
+
+#pragma mark - Survey
+
+@property (nonatomic, strong) UIColor *surveyBorderColor;
+@property (nonatomic, strong) UIColor *surveyWarningColor;
+@property (nonatomic, strong) UIFont *surveyWarningFont;
+
+@property (nonatomic, strong) UIColor *pageControlTintColor;
+@property (nonatomic, strong) UIColor *pageControlCurrentTintColor;
+
+#pragma mark - Survey View
+
+@property (nonatomic, strong) UIFont *surveyTitleFont;
+@property (nonatomic, strong) UIFont *surveySectionHeaderFont;
+@property (nonatomic, strong) UIFont *surveyTagFont;
+
+@property (nonatomic, strong) UIColor *tagsBackgroundColor;
+@property (nonatomic, strong) UIColor *tagsTextColor;
+@property (nonatomic, strong) UIColor *tagsDeleteButtonColor;
+
+@property (nonatomic, strong) UIColor *recipeDescriptionColor;
+@property (nonatomic, strong) UIFont *recipeDescriptionFont;
+
+#pragma mark - Web View
+
+@property (nonatomic, strong) UIColor *progressViewTintColor;
+
 @end

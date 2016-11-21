@@ -6,8 +6,8 @@
 //  Copyright © 2016 Zheng. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MCTabBarController.h"
 
-@interface MCMainTabBarController : UITabBarController
+@interface MCMainTabBarController : MCTabBarController
 
 @end

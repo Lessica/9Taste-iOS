@@ -53,26 +53,38 @@ static CGFloat const MCAppearanceFontSizeExtraSmall = 10.f;
             [UIColor colorWithRGB:0xe74c3c];
     _foregroundColor = _maskLabelTextColor = _badgeTextColor =
             _navigationItemColor = _buttonTitleColor =
-            [UIColor whiteColor];
-    _labelTextColor = _nickNameColor =
+                    [UIColor whiteColor];
+    _labelTextColor = _nickNameColor = _tagsDeleteButtonColor =
             [UIColor blackColor];
+    _surveyBorderColor = [UIColor colorWithWhite:0.f alpha:0.1f];
     _toastColor = [UIColor colorWithWhite:1.f alpha:.95f];
+    _pageControlCurrentTintColor = [UIColor colorWithWhite:1.f alpha:9.f];
+    _pageControlTintColor = [UIColor colorWithWhite:1.f alpha:.5f];
     _textFieldPlaceHolderColor = [UIColor colorWithWhite:0.7f alpha:1.f];
     _badgeColor = [_tintColor colorWithAlphaComponent:.9f];
     _appDescriptionColor = [UIColor grayColor];
-    _textFieldColor = [UIColor darkTextColor];
+    _textFieldColor = _recipeDescriptionColor = [UIColor darkTextColor];
+    _surveyWarningColor = _headerStateColor =
+            [UIColor lightGrayColor];
+    _tagsBackgroundColor = [UIColor colorWithRed:0.9 green:0.91 blue:0.925 alpha:1.f];
+    _tagsTextColor = [UIColor darkGrayColor];
+    _progressViewTintColor = [UIColor colorWithRGB:0xf1c40f];
 }
 
 - (void)setupFonts {
     _nickNameFont = _appNameFont = _navigationTitleFont =
             [[self class] regularFontWithSize:MCAppearanceFontSizeTitle];
-    _toastMessageFont = _emailFont = _maskLabelTextFont =
+    _surveyTitleFont = [[self class] boldFontWithSize:MCAppearanceFontSizeTitle];
+    _toastMessageFont = _emailFont = _maskLabelTextFont = _surveyTagFont =
+            _surveySectionHeaderFont = _recipeDescriptionFont =
             [[self class] italicFontWithSize:MCAppearanceFontSizeNormal];
     _appDescriptionFont = _tabbarTitleFont = _badgeTextFont =
+            _headerStateFont =
             [[self class] regularFontWithSize:MCAppearanceFontSizeSmall];
     _buttonTitleFont = _textFieldFont = _textFieldPlaceHolderFont = _labelTextFont =
             _navigationItemFont =
             [[self class] regularFontWithSize:MCAppearanceFontSizeLarge];
+    _surveyWarningFont = [[self class] regularFontWithSize:MCAppearanceFontSizeExtraLarge];
 }
 
 @end

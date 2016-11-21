@@ -25,7 +25,7 @@ static CGFloat const MCCommonTableViewCellBadgeHeight = 20.f;
 
     self.separatorInset = UIEdgeInsetsZero;
     self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+
     [self.textLabel setTextColor:MConfig.appearance.labelTextColor];
     [self.textLabel setFont:MConfig.appearance.labelTextFont];
     

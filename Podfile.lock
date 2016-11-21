@@ -1,7 +1,6 @@
 PODS:
   - FLEX (2.4.0)
   - Masonry (1.0.2)
-  - MJRefresh (3.1.12)
   - Toast (3.1.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
@@ -17,7 +16,6 @@ PODS:
 DEPENDENCIES:
   - FLEX
   - Masonry
-  - MJRefresh
   - Toast
   - YYCache
   - YYCategories
@@ -27,13 +25,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: ce991318270791ae64ab268b27dcb5e5978c3610
+PODFILE CHECKSUM: b25b12730c5c0f512d3d2564b5f249bc924acb52
 
 COCOAPODS: 1.1.1

@@ -13,9 +13,14 @@
 		0F06A7A91DCEF65600753B8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F06A7A71DCEF65600753B8E /* LaunchScreen.storyboard */; };
 		0F06A7B21DCEF75C00753B8E /* MCMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F06A7B11DCEF75C00753B8E /* MCMainTabBarController.m */; };
 		0F0D10041DDC46E50009648A /* MCBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0D10031DDC46E50009648A /* MCBarButtonItem.m */; };
+		0F682BDD1DDD829100CF2E71 /* MCPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F682BDC1DDD829100CF2E71 /* MCPageControl.m */; };
 		0F6E61881DDB5DA20046AB95 /* MCTableViewGrouped.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E61871DDB5DA20046AB95 /* MCTableViewGrouped.xib */; };
 		0F806B7D1DCEFCCD00B9CC7F /* MCFirstNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F806B7C1DCEFCCD00B9CC7F /* MCFirstNavigationController.m */; };
+		0F8F46291DDD4E89001DDF67 /* MCRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F46281DDD4E89001DDF67 /* MCRecipeCell.m */; };
+		0F8F46311DDD57F2001DDF67 /* MCMiddleNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F46301DDD57F2001DDF67 /* MCMiddleNavigationController.m */; };
+		0F8F46341DDD5827001DDF67 /* MCSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F46331DDD5827001DDF67 /* MCSurveyViewController.m */; };
 		0F9194D11DD1B2A70008A89E /* MCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F9194D01DD1B2A70008A89E /* MCResources.bundle */; };
+		0FB215941DE15FDC00A33D23 /* MCRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB215931DE15FDC00A33D23 /* MCRefreshControl.m */; };
 		0FBB10601DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB105F1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		0FCA433F1DDB57F000F338B7 /* MCTableViewPlain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA433E1DDB57F000F338B7 /* MCTableViewPlain.xib */; };
 		0FCD781A1DCF254B00619C09 /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD78191DCF254B00619C09 /* AppConfig.m */; };
@@ -27,25 +32,37 @@
 		5251228CF616769E5197C253 /* MCNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251217734FABD466F88473A /* MCNetwork.m */; };
 		525122BB8AE24C53DF8F6BE4 /* MCTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251243EF5548606F26B5670 /* MCTextField.m */; };
 		5251233F4AA9D12B204A515A /* MCScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525125E579228A1FC36DD25C /* MCScrollView.m */; };
+		525123F48959C2CCFD704036 /* MCWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512BAB06CAB64CF1455CEA /* MCWebViewProgressView.m */; };
 		525124058B15945CBFFEDCA8 /* MCTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525121D259F7C7ECCA007D88 /* MCTextFieldView.m */; };
 		5251241200A52EEA6B7A98CA /* MCImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512DF2DF6E2EDC993EC1B2 /* MCImageView.m */; };
+		525124236926CBEBCDA5B0CA /* MCRateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512F5656D7701B259C7715 /* MCRateCell.m */; };
+		5251242F2088290A65C643FD /* MCRateStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512EFCEB562DF7FD14E832 /* MCRateStarView.m */; };
 		52512461B9705107110127EA /* MCLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512D942B26EC409BE80B45 /* MCLabel.m */; };
 		525124656E37903FB3A0C77F /* MCCellLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512C0DA677DB3155DB3E38 /* MCCellLogo.m */; };
 		525124C47D6CC1014B10630D /* MCAppearanceDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 525125B89BFED21E77389D97 /* MCAppearanceDefault.m */; };
+		525124F339816EEA9683DC32 /* MCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512732415DD130D1AD3194 /* MCWebView.m */; };
+		5251250963F00E7DE3C705FC /* MCTagsControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 525128F146C071936F989D36 /* MCTagsControl.m */; };
 		5251254B714EBCBC1349A2B5 /* MCSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251269826352F51685CDFBD /* MCSettingsTableViewController.m */; };
 		5251254D80850E42C50F8B2D /* MCCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512262B3FEB532A345D845 /* MCCommonTableViewCell.m */; };
 		5251255F64DDFC4D46C6F110 /* MCRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512271EB802E92F53BEBAD /* MCRoundButton.m */; };
 		525125C73D9FBA53DC0FDD2F /* MCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512EF3652144C9B2C9C963 /* MCButton.m */; };
 		52512696C8DB5264BFF283D6 /* MCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 525128ADF58CCC8FE8802CD4 /* MCView.m */; };
+		52512778AAF88D35091D9B52 /* MCSurveyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251279A0C696703796A40CC /* MCSurveyView.m */; };
+		5251278B480047A63611C9DB /* MCInsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251244D6E69644423EAB5DB /* MCInsetsLabel.m */; };
 		5251288BE69E2EB43A7C996C /* MCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251288D078D5017A43FE817 /* MCViewController.m */; };
+		525128D1822C5155F2537DA1 /* MCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512C185FE3870219F1A6DC /* MCTabBarController.m */; };
 		525128F99734D67C4BF7B7B8 /* MCRecommendTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525120F500E4B5B9122DC775 /* MCRecommendTableViewController.m */; };
 		525129EEEE100413FF647DD9 /* MCUserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512FEE91640196851F24B6 /* MCUserTableViewController.m */; };
 		52512A7C0CFFD9E6F704B9C4 /* MCTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512ED8E12F0C531A165519 /* MCTableView.m */; };
+		52512B4DAE6A27EBB648E754 /* MCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525123D96057A5A61122C8E4 /* MCWebViewController.m */; };
 		52512BA3790FE5D125198D39 /* MCTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525129827FA3E6D4464EBDE4 /* MCTableViewController.m */; };
+		52512BB04F01144738B4EA35 /* MCTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 525126A8F6E4CA7541290058 /* MCTextCell.m */; };
 		52512BCD2861EAA7DF3F8970 /* MCWhiteNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525120D61C14458290A07472 /* MCWhiteNavigationController.m */; };
 		52512CB99682054A58C7C4C8 /* MCAboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 525125EBED9CD20160B220DD /* MCAboutTableViewCell.m */; };
 		52512CD488E18C51FBA7AA44 /* MCAvatarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512C026C02C6D69D33706D /* MCAvatarTableViewCell.m */; };
+		52512D20C79E676DB4B37F2F /* MCTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512B253AE02A984EC2F8AB /* MCTagCell.m */; };
 		52512D6B7C4116EC054A50FB /* MCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525124562224BF8EE95B53FE /* MCNavigationController.m */; };
+		52512E1804C440AA5E5B7059 /* MCWebViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 525122CD605E533AD4115271 /* MCWebViewProgress.m */; };
 		52512EAA56A4473DDE4A8A6E /* MCLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = 525125E9BD96428C2176B888 /* MCLogo.m */; };
 		52512F2BC66DF18BF9F9FF34 /* MCRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512ABA666DEA99DC1FD16E /* MCRegisterViewController.m */; };
 		52512F6F6DC89DF96673A17B /* MCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52512553889C433070BF2AE1 /* MCLoginViewController.m */; };
@@ -64,10 +81,20 @@
 		0F06A7B11DCEF75C00753B8E /* MCMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMainTabBarController.m; sourceTree = "<group>"; };
 		0F0D10021DDC46E50009648A /* MCBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCBarButtonItem.h; sourceTree = "<group>"; };
 		0F0D10031DDC46E50009648A /* MCBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCBarButtonItem.m; sourceTree = "<group>"; };
+		0F682BDB1DDD829100CF2E71 /* MCPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCPageControl.h; sourceTree = "<group>"; };
+		0F682BDC1DDD829100CF2E71 /* MCPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCPageControl.m; sourceTree = "<group>"; };
 		0F6E61871DDB5DA20046AB95 /* MCTableViewGrouped.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCTableViewGrouped.xib; sourceTree = "<group>"; };
 		0F806B7B1DCEFCCD00B9CC7F /* MCFirstNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFirstNavigationController.h; sourceTree = "<group>"; };
 		0F806B7C1DCEFCCD00B9CC7F /* MCFirstNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCFirstNavigationController.m; sourceTree = "<group>"; };
+		0F8F46271DDD4E89001DDF67 /* MCRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRecipeCell.h; sourceTree = "<group>"; };
+		0F8F46281DDD4E89001DDF67 /* MCRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRecipeCell.m; sourceTree = "<group>"; };
+		0F8F462F1DDD57F2001DDF67 /* MCMiddleNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMiddleNavigationController.h; sourceTree = "<group>"; };
+		0F8F46301DDD57F2001DDF67 /* MCMiddleNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCMiddleNavigationController.m; sourceTree = "<group>"; };
+		0F8F46321DDD5827001DDF67 /* MCSurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSurveyViewController.h; sourceTree = "<group>"; };
+		0F8F46331DDD5827001DDF67 /* MCSurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSurveyViewController.m; sourceTree = "<group>"; };
 		0F9194D01DD1B2A70008A89E /* MCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MCResources.bundle; sourceTree = "<group>"; };
+		0FB215921DE15FDC00A33D23 /* MCRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRefreshControl.h; sourceTree = "<group>"; };
+		0FB215931DE15FDC00A33D23 /* MCRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRefreshControl.m; sourceTree = "<group>"; };
 		0FBB105E1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		0FBB105F1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		0FCA433E1DDB57F000F338B7 /* MCTableViewPlain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCTableViewPlain.xib; sourceTree = "<group>"; };
@@ -78,20 +105,28 @@
 		0FCD781F1DCF26D300619C09 /* MCAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAppearance.m; sourceTree = "<group>"; };
 		0FCD78251DCF2DE100619C09 /* MCLastNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLastNavigationController.h; sourceTree = "<group>"; };
 		0FCD78261DCF2DE100619C09 /* MCLastNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLastNavigationController.m; sourceTree = "<group>"; };
+		52512018799444AF3DE05E6F /* MCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWebViewController.h; sourceTree = "<group>"; };
+		5251202CBF17A5317F8809BA /* MCRateStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRateStarView.h; sourceTree = "<group>"; };
 		525120D61C14458290A07472 /* MCWhiteNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCWhiteNavigationController.m; sourceTree = "<group>"; };
 		525120F500E4B5B9122DC775 /* MCRecommendTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRecommendTableViewController.m; sourceTree = "<group>"; };
 		5251217734FABD466F88473A /* MCNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNetwork.m; sourceTree = "<group>"; };
 		525121D259F7C7ECCA007D88 /* MCTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTextFieldView.m; sourceTree = "<group>"; };
+		52512213E5437C3587D292D4 /* MCWebViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWebViewProgress.h; sourceTree = "<group>"; };
 		52512214BA22AF2CB14E8D62 /* MCLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLabel.h; sourceTree = "<group>"; };
 		5251225FC084006E47357377 /* MCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCButton.h; sourceTree = "<group>"; };
 		52512262B3FEB532A345D845 /* MCCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCommonTableViewCell.m; sourceTree = "<group>"; };
 		52512271EB802E92F53BEBAD /* MCRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRoundButton.m; sourceTree = "<group>"; };
 		5251228BAEF122EEFB61CABA /* MCTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTextFieldView.h; sourceTree = "<group>"; };
+		525122A1DE7DCB08C4F5F107 /* MCWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWebViewProgressView.h; sourceTree = "<group>"; };
+		525122CD605E533AD4115271 /* MCWebViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCWebViewProgress.m; sourceTree = "<group>"; };
+		525122F9106456ED6D0BCA18 /* MCRateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRateCell.h; sourceTree = "<group>"; };
 		52512325FE3C450B892CCD8E /* MCTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTableViewCell.m; sourceTree = "<group>"; };
 		52512364F70FE69C9DABEA29 /* MCTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTableViewController.h; sourceTree = "<group>"; };
 		525123B5301164D872848A5E /* MCTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTableViewCell.h; sourceTree = "<group>"; };
+		525123D96057A5A61122C8E4 /* MCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCWebViewController.m; sourceTree = "<group>"; };
 		52512435D6618949AB207526 /* MCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNavigationController.h; sourceTree = "<group>"; };
 		5251243EF5548606F26B5670 /* MCTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTextField.m; sourceTree = "<group>"; };
+		5251244D6E69644423EAB5DB /* MCInsetsLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCInsetsLabel.m; sourceTree = "<group>"; };
 		525124562224BF8EE95B53FE /* MCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCNavigationController.m; sourceTree = "<group>"; };
 		52512457C90571801D65687A /* MCNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCNetwork.h; sourceTree = "<group>"; };
 		5251248C5201C2B83031B787 /* MCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCViewController.h; sourceTree = "<group>"; };
@@ -108,22 +143,35 @@
 		5251260EB5A60E25570155FF /* MCUserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCUserTableViewController.h; sourceTree = "<group>"; };
 		5251261C65612C7590CDC591 /* MCCellBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCellBadge.m; sourceTree = "<group>"; };
 		5251269826352F51685CDFBD /* MCSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSettingsTableViewController.m; sourceTree = "<group>"; };
+		525126A8F6E4CA7541290058 /* MCTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTextCell.m; sourceTree = "<group>"; };
+		52512732415DD130D1AD3194 /* MCWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCWebView.m; sourceTree = "<group>"; };
 		5251273ECC3CF99ECB62DC6C /* MCRecommendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRecommendTableViewController.h; sourceTree = "<group>"; };
 		52512790776DE7AD7E003DC2 /* MCImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCImageView.h; sourceTree = "<group>"; };
+		5251279A0C696703796A40CC /* MCSurveyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSurveyView.m; sourceTree = "<group>"; };
 		52512861896191983E385C4C /* MCWhiteNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWhiteNavigationController.h; sourceTree = "<group>"; };
+		5251286BB52B7FFBAE83CA08 /* MCSurveyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSurveyView.h; sourceTree = "<group>"; };
+		52512870050FA0B88CC85EDE /* MCTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTextCell.h; sourceTree = "<group>"; };
 		525128740F849F82718CD107 /* MCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLoginViewController.h; sourceTree = "<group>"; };
 		5251288D078D5017A43FE817 /* MCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCViewController.m; sourceTree = "<group>"; };
 		525128ADF58CCC8FE8802CD4 /* MCView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCView.m; sourceTree = "<group>"; };
 		525128D73307E7CCB7AD7D19 /* MCCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCommonTableViewCell.h; sourceTree = "<group>"; };
+		525128F146C071936F989D36 /* MCTagsControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTagsControl.m; sourceTree = "<group>"; };
 		525129827FA3E6D4464EBDE4 /* MCTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTableViewController.m; sourceTree = "<group>"; };
 		525129EAB4484EC582497441 /* MCCellLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCellLogo.h; sourceTree = "<group>"; };
+		52512A6144980E5EF94974B5 /* MCTagsControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTagsControl.h; sourceTree = "<group>"; };
+		52512AB130E3FF60B762F0AD /* MCWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWebView.h; sourceTree = "<group>"; };
 		52512ABA666DEA99DC1FD16E /* MCRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRegisterViewController.m; sourceTree = "<group>"; };
+		52512B253AE02A984EC2F8AB /* MCTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTagCell.m; sourceTree = "<group>"; };
+		52512BAB06CAB64CF1455CEA /* MCWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCWebViewProgressView.m; sourceTree = "<group>"; };
 		52512BC2F7876BDFF8D62876 /* MCSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSettingsTableViewController.h; sourceTree = "<group>"; };
 		52512BD690464301C7D4B352 /* MCAboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAboutTableViewCell.h; sourceTree = "<group>"; };
 		52512C026C02C6D69D33706D /* MCAvatarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCAvatarTableViewCell.m; sourceTree = "<group>"; };
 		52512C0DA677DB3155DB3E38 /* MCCellLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCellLogo.m; sourceTree = "<group>"; };
+		52512C185FE3870219F1A6DC /* MCTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTabBarController.m; sourceTree = "<group>"; };
 		52512C4701DEE36D17BB8781 /* MCRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRoundButton.h; sourceTree = "<group>"; };
+		52512C9555E2EF7187098549 /* MCTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTagCell.h; sourceTree = "<group>"; };
 		52512CA65456B445D75388C9 /* MCAppearanceDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAppearanceDefault.h; sourceTree = "<group>"; };
+		52512CBA0A872F995A919412 /* MCInsetsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCInsetsLabel.h; sourceTree = "<group>"; };
 		52512D942B26EC409BE80B45 /* MCLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLabel.m; sourceTree = "<group>"; };
 		52512DB864288F3CBAF2E2C0 /* MCAvatarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCAvatarTableViewCell.h; sourceTree = "<group>"; };
 		52512DBC89566C6AF45B5E61 /* MCView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCView.h; sourceTree = "<group>"; };
@@ -132,6 +180,9 @@
 		52512E994A29E46CDE5CC088 /* MCScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCScrollView.h; sourceTree = "<group>"; };
 		52512ED8E12F0C531A165519 /* MCTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCTableView.m; sourceTree = "<group>"; };
 		52512EF3652144C9B2C9C963 /* MCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCButton.m; sourceTree = "<group>"; };
+		52512EFCEB562DF7FD14E832 /* MCRateStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRateStarView.m; sourceTree = "<group>"; };
+		52512F5656D7701B259C7715 /* MCRateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRateCell.m; sourceTree = "<group>"; };
+		52512F5CE24A43E9A140AC6C /* MCTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCTabBarController.h; sourceTree = "<group>"; };
 		52512FAF20591ED4D435FBD5 /* MCLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLogo.h; sourceTree = "<group>"; };
 		52512FEE91640196851F24B6 /* MCUserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCUserTableViewController.m; sourceTree = "<group>"; };
 		6C39A9B679732B5849E15424 /* Pods-MeishiChina.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeishiChina.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeishiChina/Pods-MeishiChina.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +231,7 @@
 				0FCD78211DCF2D2400619C09 /* Controllers */,
 				52512A1373DC5259F15B0D97 /* BaseViews */,
 				52512B8A9FE23C53A39AF9CC /* BaseControllers */,
+				5251257747EB192CF19D2687 /* BaseObjects */,
 			);
 			path = MeishiChina;
 			sourceTree = "<group>";
@@ -224,6 +276,32 @@
 				5251217734FABD466F88473A /* MCNetwork.m */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		0F8F46261DDD4E5D001DDF67 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F46271DDD4E89001DDF67 /* MCRecipeCell.h */,
+				0F8F46281DDD4E89001DDF67 /* MCRecipeCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		0F8F462A1DDD534C001DDF67 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		0F8F462E1DDD579F001DDF67 /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				0F8F46321DDD5827001DDF67 /* MCSurveyViewController.h */,
+				0F8F46331DDD5827001DDF67 /* MCSurveyViewController.m */,
+				525125F9FEBFACAE5505EB4F /* Components */,
+			);
+			name = Survey;
 			sourceTree = "<group>";
 		};
 		0FCD78171DCF20A600619C09 /* Localization */ = {
@@ -271,6 +349,8 @@
 				0F806B7C1DCEFCCD00B9CC7F /* MCFirstNavigationController.m */,
 				0FCD78251DCF2DE100619C09 /* MCLastNavigationController.h */,
 				0FCD78261DCF2DE100619C09 /* MCLastNavigationController.m */,
+				0F8F462F1DDD57F2001DDF67 /* MCMiddleNavigationController.h */,
+				0F8F46301DDD57F2001DDF67 /* MCMiddleNavigationController.m */,
 			);
 			name = NavigationControllers;
 			sourceTree = "<group>";
@@ -279,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				52512B3FF2DB5B719EACF433 /* Me */,
+				0F8F462E1DDD579F001DDF67 /* Survey */,
 				52512A572B78800CE47B6C79 /* Recommend */,
 			);
 			name = MainControllers;
@@ -300,6 +381,52 @@
 				6C39A9B679732B5849E15424 /* Pods-MeishiChina.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5251257747EB192CF19D2687 /* BaseObjects */ = {
+			isa = PBXGroup;
+			children = (
+				525122CD605E533AD4115271 /* MCWebViewProgress.m */,
+				52512213E5437C3587D292D4 /* MCWebViewProgress.h */,
+			);
+			name = BaseObjects;
+			sourceTree = "<group>";
+		};
+		525125F9FEBFACAE5505EB4F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5251286BB52B7FFBAE83CA08 /* MCSurveyView.h */,
+				5251279A0C696703796A40CC /* MCSurveyView.m */,
+				52512856B42FE7541EF01AD4 /* Cells */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		525127E7BF252D69182F9C4F /* CellComponents */ = {
+			isa = PBXGroup;
+			children = (
+				52512A6144980E5EF94974B5 /* MCTagsControl.h */,
+				525128F146C071936F989D36 /* MCTagsControl.m */,
+				5251244D6E69644423EAB5DB /* MCInsetsLabel.m */,
+				52512CBA0A872F995A919412 /* MCInsetsLabel.h */,
+				5251202CBF17A5317F8809BA /* MCRateStarView.h */,
+				52512EFCEB562DF7FD14E832 /* MCRateStarView.m */,
+			);
+			name = CellComponents;
+			sourceTree = "<group>";
+		};
+		52512856B42FE7541EF01AD4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				525127E7BF252D69182F9C4F /* CellComponents */,
+				52512B253AE02A984EC2F8AB /* MCTagCell.m */,
+				52512C9555E2EF7187098549 /* MCTagCell.h */,
+				52512F5656D7701B259C7715 /* MCRateCell.m */,
+				525122F9106456ED6D0BCA18 /* MCRateCell.h */,
+				525126A8F6E4CA7541290058 /* MCTextCell.m */,
+				52512870050FA0B88CC85EDE /* MCTextCell.h */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		5251285FEBA7DDCBEE726F98 /* Cells */ = {
@@ -335,10 +462,18 @@
 				5251243EF5548606F26B5670 /* MCTextField.m */,
 				52512E994A29E46CDE5CC088 /* MCScrollView.h */,
 				525125E579228A1FC36DD25C /* MCScrollView.m */,
+				0FB215921DE15FDC00A33D23 /* MCRefreshControl.h */,
+				0FB215931DE15FDC00A33D23 /* MCRefreshControl.m */,
 				5251225FC084006E47357377 /* MCButton.h */,
 				52512EF3652144C9B2C9C963 /* MCButton.m */,
 				0F0D10021DDC46E50009648A /* MCBarButtonItem.h */,
 				0F0D10031DDC46E50009648A /* MCBarButtonItem.m */,
+				0F682BDB1DDD829100CF2E71 /* MCPageControl.h */,
+				0F682BDC1DDD829100CF2E71 /* MCPageControl.m */,
+				52512732415DD130D1AD3194 /* MCWebView.m */,
+				52512AB130E3FF60B762F0AD /* MCWebView.h */,
+				52512BAB06CAB64CF1455CEA /* MCWebViewProgressView.m */,
+				525122A1DE7DCB08C4F5F107 /* MCWebViewProgressView.h */,
 			);
 			name = BaseViews;
 			sourceTree = "<group>";
@@ -346,6 +481,8 @@
 		52512A572B78800CE47B6C79 /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
+				0F8F462A1DDD534C001DDF67 /* Components */,
+				0F8F46261DDD4E5D001DDF67 /* Cells */,
 				5251273ECC3CF99ECB62DC6C /* MCRecommendTableViewController.h */,
 				525120F500E4B5B9122DC775 /* MCRecommendTableViewController.m */,
 			);
@@ -380,6 +517,10 @@
 				5251288D078D5017A43FE817 /* MCViewController.m */,
 				52512861896191983E385C4C /* MCWhiteNavigationController.h */,
 				525120D61C14458290A07472 /* MCWhiteNavigationController.m */,
+				52512F5CE24A43E9A140AC6C /* MCTabBarController.h */,
+				52512C185FE3870219F1A6DC /* MCTabBarController.m */,
+				525123D96057A5A61122C8E4 /* MCWebViewController.m */,
+				52512018799444AF3DE05E6F /* MCWebViewController.h */,
 			);
 			name = BaseControllers;
 			sourceTree = "<group>";
@@ -551,6 +692,7 @@
 				0F06A79B1DCEF65500753B8E /* main.m in Sources */,
 				0FCD781A1DCF254B00619C09 /* AppConfig.m in Sources */,
 				0FCD78271DCF2DE100619C09 /* MCLastNavigationController.m in Sources */,
+				0FB215941DE15FDC00A33D23 /* MCRefreshControl.m in Sources */,
 				52512CD488E18C51FBA7AA44 /* MCAvatarTableViewCell.m in Sources */,
 				5251254D80850E42C50F8B2D /* MCCommonTableViewCell.m in Sources */,
 				52512CB99682054A58C7C4C8 /* MCAboutTableViewCell.m in Sources */,
@@ -558,6 +700,7 @@
 				52512FAFDA13D9B290FB0927 /* MCCellBadge.m in Sources */,
 				5251254B714EBCBC1349A2B5 /* MCSettingsTableViewController.m in Sources */,
 				525129EEEE100413FF647DD9 /* MCUserTableViewController.m in Sources */,
+				0F8F46291DDD4E89001DDF67 /* MCRecipeCell.m in Sources */,
 				525128F99734D67C4BF7B7B8 /* MCRecommendTableViewController.m in Sources */,
 				525124656E37903FB3A0C77F /* MCCellLogo.m in Sources */,
 				5251209A1E4F4B1F913FD708 /* MCTableViewCell.m in Sources */,
@@ -565,12 +708,15 @@
 				52512461B9705107110127EA /* MCLabel.m in Sources */,
 				52512BA3790FE5D125198D39 /* MCTableViewController.m in Sources */,
 				52512D6B7C4116EC054A50FB /* MCNavigationController.m in Sources */,
+				0F8F46341DDD5827001DDF67 /* MCSurveyViewController.m in Sources */,
 				525124C47D6CC1014B10630D /* MCAppearanceDefault.m in Sources */,
 				5251288BE69E2EB43A7C996C /* MCViewController.m in Sources */,
 				0F0D10041DDC46E50009648A /* MCBarButtonItem.m in Sources */,
 				52512F6F6DC89DF96673A17B /* MCLoginViewController.m in Sources */,
+				0F8F46311DDD57F2001DDF67 /* MCMiddleNavigationController.m in Sources */,
 				52512BCD2861EAA7DF3F8970 /* MCWhiteNavigationController.m in Sources */,
 				52512A7C0CFFD9E6F704B9C4 /* MCTableView.m in Sources */,
+				0F682BDD1DDD829100CF2E71 /* MCPageControl.m in Sources */,
 				52512EAA56A4473DDE4A8A6E /* MCLogo.m in Sources */,
 				525124058B15945CBFFEDCA8 /* MCTextFieldView.m in Sources */,
 				52512696C8DB5264BFF283D6 /* MCView.m in Sources */,
@@ -580,6 +726,18 @@
 				5251255F64DDFC4D46C6F110 /* MCRoundButton.m in Sources */,
 				5251228CF616769E5197C253 /* MCNetwork.m in Sources */,
 				52512F2BC66DF18BF9F9FF34 /* MCRegisterViewController.m in Sources */,
+				52512778AAF88D35091D9B52 /* MCSurveyView.m in Sources */,
+				525128D1822C5155F2537DA1 /* MCTabBarController.m in Sources */,
+				5251250963F00E7DE3C705FC /* MCTagsControl.m in Sources */,
+				5251278B480047A63611C9DB /* MCInsetsLabel.m in Sources */,
+				52512D20C79E676DB4B37F2F /* MCTagCell.m in Sources */,
+				525124236926CBEBCDA5B0CA /* MCRateCell.m in Sources */,
+				5251242F2088290A65C643FD /* MCRateStarView.m in Sources */,
+				52512BB04F01144738B4EA35 /* MCTextCell.m in Sources */,
+				52512B4DAE6A27EBB648E754 /* MCWebViewController.m in Sources */,
+				525124F339816EEA9683DC32 /* MCWebView.m in Sources */,
+				525123F48959C2CCFD704036 /* MCWebViewProgressView.m in Sources */,
+				52512E1804C440AA5E5B7059 /* MCWebViewProgress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

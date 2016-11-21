@@ -17,8 +17,9 @@
 @property (nonatomic, strong, readonly) MCAppearance *appearance;
 @property (nonatomic, strong, readonly) MCNetwork *networkService;
 
+extern NSString * const MConfigStorageApiUrl;
+
 extern NSString * const MConfigStorageAppearanceKey;
-extern NSString * const MConfigStorageApiUrlKey;
 extern NSString * const MConfigStorageUserStateKey;
 
 + (instancetype)sharedInstance;

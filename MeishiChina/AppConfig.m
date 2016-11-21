@@ -11,8 +11,9 @@
 
 static NSString * const MCKeyStorageDatabase = @"MCKeyStorageDatabase";
 
+NSString * const MConfigStorageApiUrl = @"http://115.28.214.126:8080/meishi";
+
 NSString * const MConfigStorageAppearanceKey = @"MConfigAppearanceKey";
-NSString * const MConfigStorageApiUrlKey = @"MConfigApiUrlKey";
 NSString * const MConfigStorageUserStateKey = @"MConfigStorageUserStateKey";
 
 @implementation AppConfig
@@ -67,7 +68,7 @@ NSString * const MConfigStorageUserStateKey = @"MConfigStorageUserStateKey";
 - (MCNetwork *)networkService {
     if (!_networkService)
     {
-        NSString *apiURL = (NSString *)[self.storage objectForKey:MConfigStorageApiUrlKey];
+        NSString *apiURL = MConfigStorageApiUrl;
         MCLog(@"Load API: %@", apiURL);
         MCNetwork *networkService = [[MCNetwork alloc] initWithURL:[NSURL URLWithString:apiURL]];
         _networkService = networkService;
@@ -82,7 +83,6 @@ NSString * const MConfigStorageUserStateKey = @"MConfigStorageUserStateKey";
     YYCache *storage = [self storage];
     NSDictionary *defaultConfig = @{
         MConfigStorageAppearanceKey: @"MCAppearanceDefault",
-        MConfigStorageApiUrlKey: @"http://192.168.0.111:8000/meishi",
     };
     // Process Default Config
     for (NSString *configKey in defaultConfig.allKeys) {
@@ -131,6 +131,10 @@ NSString * const MConfigStorageUserStateKey = @"MConfigStorageUserStateKey";
     NSFontAttributeName: appearance.tabbarTitleFont,
     } forState:UIControlStateNormal];
     [UITabBar appearance].tintColor = appearance.tintColor;
+    
+    // Page Control
+    [[UIPageControl appearance] setPageIndicatorTintColor:appearance.pageControlTintColor];
+    [[UIPageControl appearance] setCurrentPageIndicatorTintColor:appearance.pageControlCurrentTintColor];
 }
 
 - (void)setupNetwork

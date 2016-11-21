@@ -44,7 +44,7 @@
         _isNavigationBarTransparent = YES;
     }
     
-    if (nil == self.navigationItem.leftBarButtonItem)
+    if (nil == self.navigationItem.leftBarButtonItem && nil == self.tabBarController)
     {
         [self.navigationItem setLeftBarButtonItem:self.closeButtonItem];
     }

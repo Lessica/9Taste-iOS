@@ -54,6 +54,11 @@ static NSString * const MCAboutTableViewSectionCommonRowCellIdentifier = @"MCAbo
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.navigationController.navigationBar setTranslucent:NO];
+    
     self.title = NSLocalizedString(@"Settings", nil);
 #ifdef DEBUG
     self.navigationItem.rightBarButtonItem = self.debugButton;

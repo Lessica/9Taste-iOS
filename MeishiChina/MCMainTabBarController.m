@@ -9,6 +9,7 @@
 #import "MCMainTabBarController.h"
 #import "MCFirstNavigationController.h"
 #import "MCLastNavigationController.h"
+#import "MCMiddleNavigationController.h"
 
 @interface MCMainTabBarController ()
 
@@ -22,7 +23,8 @@
     {
         MCFirstNavigationController *firstController = [[MCFirstNavigationController alloc] init];
         MCLastNavigationController *lastController = [[MCLastNavigationController alloc] init];
-        self.viewControllers = @[firstController, lastController];
+        MCMiddleNavigationController *middleController = [[MCMiddleNavigationController alloc] init];
+        self.viewControllers = @[firstController, middleController, lastController];
     }
     return self;
 }
@@ -30,7 +32,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self.tabBar setTranslucent:NO];
 }
 
 @end
