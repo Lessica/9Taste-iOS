@@ -16,6 +16,7 @@
 		0F682BDD1DDD829100CF2E71 /* MCPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F682BDC1DDD829100CF2E71 /* MCPageControl.m */; };
 		0F6E61881DDB5DA20046AB95 /* MCTableViewGrouped.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F6E61871DDB5DA20046AB95 /* MCTableViewGrouped.xib */; };
 		0F806B7D1DCEFCCD00B9CC7F /* MCFirstNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F806B7C1DCEFCCD00B9CC7F /* MCFirstNavigationController.m */; };
+		0F81316A1DE48262003778BD /* MCRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8131691DE48262003778BD /* MCRecipeViewController.m */; };
 		0F8F46291DDD4E89001DDF67 /* MCRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F46281DDD4E89001DDF67 /* MCRecipeCell.m */; };
 		0F8F46311DDD57F2001DDF67 /* MCMiddleNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F46301DDD57F2001DDF67 /* MCMiddleNavigationController.m */; };
 		0F8F46341DDD5827001DDF67 /* MCSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F46331DDD5827001DDF67 /* MCSurveyViewController.m */; };
@@ -85,6 +86,8 @@
 		0F6E61871DDB5DA20046AB95 /* MCTableViewGrouped.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCTableViewGrouped.xib; sourceTree = "<group>"; };
 		0F806B7B1DCEFCCD00B9CC7F /* MCFirstNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCFirstNavigationController.h; sourceTree = "<group>"; };
 		0F806B7C1DCEFCCD00B9CC7F /* MCFirstNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCFirstNavigationController.m; sourceTree = "<group>"; };
+		0F8131681DE48262003778BD /* MCRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRecipeViewController.h; sourceTree = "<group>"; };
+		0F8131691DE48262003778BD /* MCRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRecipeViewController.m; sourceTree = "<group>"; };
 		0F8F46271DDD4E89001DDF67 /* MCRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRecipeCell.h; sourceTree = "<group>"; };
 		0F8F46281DDD4E89001DDF67 /* MCRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRecipeCell.m; sourceTree = "<group>"; };
 		0F8F462F1DDD57F2001DDF67 /* MCMiddleNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCMiddleNavigationController.h; sourceTree = "<group>"; };
@@ -480,6 +483,8 @@
 				0F8F46261DDD4E5D001DDF67 /* Cells */,
 				5251273ECC3CF99ECB62DC6C /* MCRecommendTableViewController.h */,
 				525120F500E4B5B9122DC775 /* MCRecommendTableViewController.m */,
+				0F8131681DE48262003778BD /* MCRecipeViewController.h */,
+				0F8131691DE48262003778BD /* MCRecipeViewController.m */,
 			);
 			name = Recommend;
 			sourceTree = "<group>";
@@ -687,6 +692,7 @@
 				0F06A79B1DCEF65500753B8E /* main.m in Sources */,
 				0FCD781A1DCF254B00619C09 /* AppConfig.m in Sources */,
 				0FCD78271DCF2DE100619C09 /* MCLastNavigationController.m in Sources */,
+				0F81316A1DE48262003778BD /* MCRecipeViewController.m in Sources */,
 				52512CD488E18C51FBA7AA44 /* MCAvatarTableViewCell.m in Sources */,
 				5251254D80850E42C50F8B2D /* MCCommonTableViewCell.m in Sources */,
 				52512CB99682054A58C7C4C8 /* MCAboutTableViewCell.m in Sources */,

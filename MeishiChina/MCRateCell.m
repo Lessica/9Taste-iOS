@@ -14,8 +14,8 @@
 
 - (MCRateStarView *)rateStarView {
     if (!_rateStarView) {
-        MCRateStarView *rateStarView = [[MCRateStarView alloc] init];
-        rateStarView.origin = CGPointMake(16.f, 16.f);
+        MCRateStarView *rateStarView = [[MCRateStarView alloc] initWithFrame:self.bounds];
+        rateStarView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _rateStarView = rateStarView;
     }
     return _rateStarView;

@@ -9,6 +9,7 @@
 #import "MCRecommendTableViewController.h"
 #import "MCRecipeCell.h"
 #import "MCSurveyView.h"
+#import "MCRecipeViewController.h"
 
 #define MC_RECOMMENDATION_PAGE_NUM 10
 
@@ -47,20 +48,48 @@ static CGFloat const MCRecommendTableViewSectionHeadRowCellHeight = 144.f;
     self.title = NSLocalizedString(@"Recommend", nil);
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationReceived:) name:MCNetworkNotificationUserStateChanged object:nil];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     // Load Survey Here
     if (!self.dataLoaded && !self.dataLoading) {
         self.dataLoading = YES;
         [self loadRecommendation:nil];
+    } else if (!MNet.userState) {
+        [self clearData];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MCNetworkNotificationUserStateChanged object:nil];
+}
+
+- (void)notificationReceived:(NSNotification *)aNotification {
+    if ([aNotification.name isEqualToString:MCNetworkNotificationUserStateChanged]) {
+        if (!aNotification.userInfo[MCNetworkNotificationUserInfoKeyUserState]) {
+            [self clearData];
+        }
     }
 }
 
 #pragma mark - Load
 
+- (void)clearData {
+    self.dataLoaded = NO;
+    self.dataLoading = NO;
+    self.recommendationList = nil;
+    [self.tableView reloadData];
+}
+
 - (void)loadRecommendation:(UIRefreshControl *)sender {
     NSNumber *userId = MNet.userState[MCNetworkUserStateKeyUserID];
     if (!userId) {
+        self.dataLoading = NO;
         [self.navigationController.view makeToast:NSLocalizedString(@"Please Login", nil)];
         if ([sender isRefreshing]) {
             [sender endRefreshing];
@@ -74,6 +103,7 @@ static CGFloat const MCRecommendTableViewSectionHeadRowCellHeight = 144.f;
                                                 @"length": @(MC_RECOMMENDATION_PAGE_NUM),
                                                 }
                                         };
+    MCLog(@"%@", requestDictionary);
     if (!sender) {
         self.navigationController.view.userInteractionEnabled = NO;
         [self.navigationController.view makeToastActivity:CSToastPositionCenter];
@@ -163,6 +193,11 @@ static CGFloat const MCRecommendTableViewSectionHeadRowCellHeight = 144.f;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section == MCRecommendTableViewSectionHead) {
+        MCRecipeViewController *recipeViewController = [[MCRecipeViewController alloc] init];
+        recipeViewController.surveyDict = self.recommendationList[indexPath.row];
+        [self.navigationController pushViewController:recipeViewController animated:YES];
+    }
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {

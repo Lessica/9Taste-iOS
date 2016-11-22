@@ -6,7 +6,7 @@
 //  Copyright © 2016年 wentian. All rights reserved.
 //
 
-#import "MCView.h"
+#import "MCScrollView.h"
 
 @class MCRateStarView;
 
@@ -15,9 +15,9 @@
 
 @end
 
-@interface MCRateStarView : MCView
-@property (nonatomic, assign) NSUInteger score;
-@property (nonatomic, weak) id <MCRateViewDelegate> delegate;
+@interface MCRateStarView : MCScrollView
+@property (nonatomic, assign) NSInteger score;
+@property (nonatomic, weak) id <MCRateViewDelegate> rateDelegate;
 @property (nonatomic, assign) BOOL hasRated;
 
 @end

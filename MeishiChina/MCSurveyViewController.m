@@ -57,6 +57,7 @@
                     @"length": @(MC_SURVEY_PAGE_NUM),
             }
     };
+    MCLog(@"%@", requestDictionary);
     self.navigationController.view.userInteractionEnabled = NO;
     [self.navigationController.view makeToastActivity:CSToastPositionCenter];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^() {
@@ -96,7 +97,7 @@
     for (MCSurveyView *surveyView in self.surveyViewList)
     {
         if (pageIndex >= surveyArray.count) break;
-        surveyView.surveyDict = surveyArray[pageIndex];
+        surveyView.surveyDict = surveyArray[pageIndex].mutableCopy;
         pageIndex++;
     }
 }
@@ -178,11 +179,12 @@
                     @"feedbacks": @[
                             @{
                                     @"recipe_id": view.surveyDict[kMCSurveyKeyRecipeId],
-                                    @"rating": view.answerDict[kMCAnswerKeyRecipeRating],
+                                    @"rating": view.surveyDict[kMCAnswerKeyRecipeRating],
                             }
                     ]
             }
     };
+    MCLog(@"%@", requestDictionary);
     self.navigationController.view.userInteractionEnabled = NO;
     [self.navigationController.view makeToastActivity:CSToastPositionCenter];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^() {
@@ -209,7 +211,7 @@
 
 - (void)surveyViewDetailDidTapped:(MCSurveyView *)view {
     NSURL *recipeUrl =
-            [NSURL URLWithString:[NSString stringWithFormat:@"http://m.meishichina.com/recipe/%u/", [view.surveyDict[kMCSurveyKeyRecipeId] unsignedIntegerValue]]];
+            [NSURL URLWithString:[NSString stringWithFormat:@"http://m.meishichina.com/recipe/%lu/", [view.surveyDict[kMCSurveyKeyRecipeId] unsignedIntegerValue]]];
     MCWebViewController *webViewController = [[MCWebViewController alloc] init];
     webViewController.url = recipeUrl;
     [self.navigationController pushViewController:webViewController animated:YES];

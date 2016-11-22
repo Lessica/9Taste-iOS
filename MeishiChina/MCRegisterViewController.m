@@ -357,6 +357,7 @@ static CGFloat const MCRegisterViewLogoHeight = 60.f;
             @"password": password
         }
     };
+    MCLog(@"%@", requestDictionary);
     self.navigationController.view.userInteractionEnabled = NO;
     [self.navigationController.view makeToastActivity:CSToastPositionCenter];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^() {

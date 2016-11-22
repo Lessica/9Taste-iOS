@@ -15,8 +15,7 @@
 
 @interface MCSurveyView : MCView
 
-@property (nonatomic, strong) NSDictionary *surveyDict;
-@property (nonatomic, strong) NSDictionary *answerDict;
+@property (nonatomic, strong) NSMutableDictionary *surveyDict;
 @property (nonatomic, weak) id <MCSurveyViewDelegate> delegate;
 @property (nonatomic, assign) BOOL hasAnswered;
 

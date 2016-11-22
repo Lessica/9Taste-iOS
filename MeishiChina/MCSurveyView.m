@@ -118,14 +118,16 @@ static NSString * const MCLinkCellReuseIdentifier = @"MCLinkCellReuseIdentifier"
 
 #pragma mark - Load
 
-- (void)setSurveyDict:(NSDictionary *)surveyDict {
+- (void)setSurveyDict:(NSMutableDictionary *)surveyDict {
     _surveyDict = surveyDict;
+    [self reloadSurveyData];
+}
+
+- (void)reloadSurveyData {
     @weakify(self);
-    [self.imageView yy_setImageWithURL:[NSURL URLWithString:surveyDict[kMCSurveyKeyRecipeFirstImageUrl]]
+    [self.imageView yy_setImageWithURL:[NSURL URLWithString:self.surveyDict[kMCSurveyKeyRecipeFirstImageUrl]]
                            placeholder:nil
-                               options:YYWebImageOptionShowNetworkActivity |
-                                       YYWebImageOptionProgressive |
-                                       YYWebImageOptionSetImageWithFadeAnimation
+                               options:YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressive | YYWebImageOptionSetImageWithFadeAnimation
                             completion:^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {
                                 @strongify(self);
                                 if (stage == YYWebImageStageFinished) {
@@ -136,19 +138,19 @@ static NSString * const MCLinkCellReuseIdentifier = @"MCLinkCellReuseIdentifier"
     self.tableView.hidden = NO;
     self.imageView.hidden = NO;
     self.imageTitleLabel.hidden = NO;
-
+    
     [self.materialCell.tagsControl.tags removeAllObjects];
     for (NSString *materialName in self.surveyDict[kMCSurveyKeyRecipeMaterials]) {
         [self.materialCell.tagsControl.tags addObject:materialName];
     }
     [self.materialCell.tagsControl reloadTagSubviews];
-
+    
     [self.tagCell.tagsControl.tags removeAllObjects];
     for (NSString *tagName in self.surveyDict[kMCSurveyKeyRecipeTags]) {
         [self.tagCell.tagsControl.tags addObject:tagName];
     }
     [self.tagCell.tagsControl reloadTagSubviews];
-
+    
     self.textCell.insetsLabel.text = self.surveyDict[kMCSurveyKeyRecipeDescription];
 }
 
@@ -168,11 +170,11 @@ static NSString * const MCLinkCellReuseIdentifier = @"MCLinkCellReuseIdentifier"
         MCTagCell *tagCell = [[MCTagCell alloc] initWithStyle:UITableViewCellStyleDefault
                                               reuseIdentifier:MCTagCellReuseIdentifier];
         if (self.surveyDict) {
-            [self.tagCell.tagsControl.tags removeAllObjects];
+            [tagCell.tagsControl.tags removeAllObjects];
             for (NSString *tagName in self.surveyDict[kMCSurveyKeyRecipeMaterials]) {
-                [self.tagCell.tagsControl.tags addObject:tagName];
+                [tagCell.tagsControl.tags addObject:tagName];
             }
-            [self.tagCell.tagsControl reloadTagSubviews];
+            [tagCell.tagsControl reloadTagSubviews];
         }
         _tagCell = tagCell;
     }
@@ -184,11 +186,11 @@ static NSString * const MCLinkCellReuseIdentifier = @"MCLinkCellReuseIdentifier"
         MCTagCell *materialCell = [[MCTagCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                    reuseIdentifier:MCMaterialCellReuseIdentifier];
         if (self.surveyDict) {
-            [self.materialCell.tagsControl.tags removeAllObjects];
+            [materialCell.tagsControl.tags removeAllObjects];
             for (NSString *materialName in self.surveyDict[kMCSurveyKeyRecipeMaterials]) {
-                [self.materialCell.tagsControl.tags addObject:materialName];
+                [materialCell.tagsControl.tags addObject:materialName];
             }
-            [self.materialCell.tagsControl reloadTagSubviews];
+            [materialCell.tagsControl reloadTagSubviews];
         }
         _materialCell = materialCell;
     }
@@ -199,7 +201,7 @@ static NSString * const MCLinkCellReuseIdentifier = @"MCLinkCellReuseIdentifier"
     if (!_rateCell) {
         MCRateCell *rateCell = [[MCRateCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                  reuseIdentifier:MCRateCellReuseIdentifier];
-        rateCell.rateStarView.delegate = self;
+        rateCell.rateStarView.rateDelegate = self;
         _rateCell = rateCell;
     }
     return _rateCell;
@@ -277,7 +279,7 @@ static NSString * const MCLinkCellReuseIdentifier = @"MCLinkCellReuseIdentifier"
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (tableView == self.tableView) {
         if (section == MCSurveyTableViewSectionRate) {
-            return NSLocalizedString(@"Rate", nil);
+            return NSLocalizedString(@"Tap To Rate", nil);
         } else if (section == MCSurveyTableViewSectionMaterial) {
             return NSLocalizedString(@"Materials", nil);
         } else if (section == MCSurveyTableViewSectionTag) {
@@ -354,10 +356,7 @@ static NSString * const MCLinkCellReuseIdentifier = @"MCLinkCellReuseIdentifier"
 #pragma mark - MCRateCellDelegate
 
 - (void)rateViewDidTapped:(MCRateStarView *)view {
-    NSDictionary *answerDict = @{
-            kMCAnswerKeyRecipeRating: @(view.score),
-    };
-    self.answerDict = answerDict;
+    [self.surveyDict setObject:@(view.score - 4) forKey:kMCAnswerKeyRecipeRating];
     if (_delegate && [_delegate respondsToSelector:@selector(surveyViewDidChanged:)]) {
         [_delegate surveyViewDidChanged:self];
     }
