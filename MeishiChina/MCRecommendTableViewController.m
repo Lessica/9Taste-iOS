@@ -7,8 +7,10 @@
 //
 
 #import "MCRecommendTableViewController.h"
-#import "MCRefreshControl.h"
 #import "MCRecipeCell.h"
+#import "MCSurveyView.h"
+
+#define MC_RECOMMENDATION_PAGE_NUM 10
 
 static const NSInteger MCRecommendTableViewSectionNum = 1;
 typedef enum : NSUInteger {
@@ -19,7 +21,9 @@ static CGFloat const MCRecommendTableViewSectionHeadRowCellHeight = 144.f;
 
 @interface MCRecommendTableViewController ()
 
-@property (nonatomic, strong) MCRefreshControl *refreshControl;
+@property (nonatomic, strong) NSArray <NSDictionary *> *recommendationList;
+@property (nonatomic, assign) BOOL dataLoading;
+@property (nonatomic, assign) BOOL dataLoaded;
 
 @end
 
@@ -29,34 +33,87 @@ static CGFloat const MCRecommendTableViewSectionHeadRowCellHeight = 144.f;
 {
     [super viewDidLoad];
     
+    UITableViewController *tableViewController = [[UITableViewController alloc] init];
+    tableViewController.tableView = self.tableView;
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(loadRecommendation:) forControlEvents:UIControlEventValueChanged];
+    [tableViewController setRefreshControl:refreshControl];
+    
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.navigationController.navigationBar setTranslucent:NO];
     
     self.title = NSLocalizedString(@"Recommend", nil);
-    [self refreshControl];
 }
 
-#pragma mark - MJRefresh Header
-
-- (MCRefreshControl *)refreshControl {
-    if (!_refreshControl) {
-        MCRefreshControl *refreshControl = [[MCRefreshControl alloc] initInScrollView:self.tableView];
-        [refreshControl addTarget:self action:@selector(startRefreshing) forControlEvents:UIControlEventValueChanged];
-        refreshControl.tintColor = MConfig.appearance.headerStateColor;
-        refreshControl.activityIndicatorViewColor = MConfig.appearance.headerStateColor;
-        refreshControl.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-        _refreshControl = refreshControl;
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    // Load Survey Here
+    if (!self.dataLoaded && !self.dataLoading) {
+        self.dataLoading = YES;
+        [self loadRecommendation:nil];
     }
-    return _refreshControl;
 }
 
-- (void)startRefreshing {
-    [self performSelector:@selector(endRefreshing) withObject:nil afterDelay:3.f];
-}
+#pragma mark - Load
 
-- (void)endRefreshing {
-    [self.refreshControl endRefreshing];
+- (void)loadRecommendation:(UIRefreshControl *)sender {
+    NSNumber *userId = MNet.userState[MCNetworkUserStateKeyUserID];
+    if (!userId) {
+        [self.navigationController.view makeToast:NSLocalizedString(@"Please Login", nil)];
+        if ([sender isRefreshing]) {
+            [sender endRefreshing];
+        }
+        return;
+    }
+    NSDictionary *requestDictionary = @{
+                                        @"action": @"fetch_recommendation",
+                                        @"form": @{
+                                                @"user_id": userId,
+                                                @"length": @(MC_RECOMMENDATION_PAGE_NUM),
+                                                }
+                                        };
+    if (!sender) {
+        self.navigationController.view.userInteractionEnabled = NO;
+        [self.navigationController.view makeToastActivity:CSToastPositionCenter];
+    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^() {
+        NSError *requestError = nil;
+        NSDictionary *responseDictionary = [MNet sendSynchronousRequest:requestDictionary error:&requestError];
+        dispatch_async_on_main_queue(^() {
+            self.dataLoading = NO;
+            if (!sender) {
+                [self.navigationController.view hideToastActivity];
+                self.navigationController.view.userInteractionEnabled = YES;
+            }
+            if ([sender isRefreshing]) {
+                [sender endRefreshing];
+            }
+            if (requestError != nil) {
+                [self.navigationController.view makeToast:[requestError localizedDescription]];
+                return;
+            }
+            MCLog(@"%@", responseDictionary);
+            NSString *errorMsg = responseDictionary[@"error"];
+            if (errorMsg && errorMsg.length > 0) {
+                [self.navigationController.view makeToast:errorMsg];
+                return;
+            }
+            NSDictionary *dataDict = responseDictionary[@"data"];
+            if (!dataDict) {
+                return;
+            }
+            NSArray *dataList = dataDict[@"list"];
+            if (!dataList) {
+                return;
+            }
+            MCLog(@"%@", dataList);
+            self.dataLoaded = YES;
+            self.recommendationList = dataList;
+            [self.tableView reloadData];
+        });
+    });
 }
 
 #pragma mark - UITableViewDataSource
@@ -66,7 +123,10 @@ static CGFloat const MCRecommendTableViewSectionHeadRowCellHeight = 144.f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (section == MCRecommendTableViewSectionHead) {
+        return self.recommendationList.count;
+    }
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,6 +145,15 @@ static CGFloat const MCRecommendTableViewSectionHeadRowCellHeight = 144.f;
             cell = [[MCRecipeCell alloc] initWithStyle:UITableViewCellStyleDefault
                                        reuseIdentifier:MCRecommendTableViewSectionHeadRowCellIdentifier];
         }
+        @weakify(self);
+        [cell.backgroundImageView yy_setImageWithURL:[NSURL URLWithString:self.recommendationList[indexPath.row][kMCSurveyKeyRecipeFirstImageUrl]]
+                                         placeholder:nil
+                                             options:YYWebImageOptionShowNetworkActivity | YYWebImageOptionProgressiveBlur | YYWebImageOptionSetImageWithFadeAnimation
+                                          completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+                                              @strongify(self);
+                                              cell.imageTitleLabel.text = self.recommendationList[indexPath.row][kMCSurveyKeyRecipeName];
+                                              [cell resizeImageTitle];
+                                          }];
         return cell;
     }
     return [[MCRecipeCell alloc] init];
@@ -102,12 +171,6 @@ static CGFloat const MCRecommendTableViewSectionHeadRowCellHeight = 144.f;
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return NO;
-}
-
-#pragma mark - Load
-
-- (void)loadRecipe {
-    
 }
 
 @end

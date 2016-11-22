@@ -11,11 +11,11 @@
 #import "MCRateCell.h"
 #import "MCTextCell.h"
 
-CGFloat const kMCSurveyLeftMargin = 5.f;
-CGFloat const kMCSurveyRightMargin = 5.f;
+static CGFloat const kMCSurveyLeftMargin = 5.f;
+static CGFloat const kMCSurveyRightMargin = 5.f;
 
-CGFloat const kMCSurveyTitleLeftMargin = 24.f;
-CGFloat const kMCSurveyTitleRightMargin = 24.f;
+static CGFloat const kMCSurveyTitleLeftMargin = 24.f;
+static CGFloat const kMCSurveyTitleRightMargin = 24.f;
 
 NSString * const kMCSurveyKeyRecipeId = @"recipeId";
 NSString * const kMCSurveyKeyRecipeFirstImageUrl = @"recipeFirstImageUrl";
@@ -86,7 +86,7 @@ static NSString * const MCLinkCellReuseIdentifier = @"MCLinkCellReuseIdentifier"
 - (MCLabel *)imageTitleLabel {
     if (!_imageTitleLabel) {
         MCLabel *imageTitleLabel =
-                [[MCLabel alloc] initWithFrame:CGRectMake(0, 0, self.width - kMCSurveyTitleLeftMargin - kMCSurveyRightMargin, 0)];
+                [[MCLabel alloc] initWithFrame:CGRectMake(0, 0, self.width - kMCSurveyTitleLeftMargin - kMCSurveyTitleRightMargin, 0)];
         imageTitleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         imageTitleLabel.font = MConfig.appearance.surveyTitleFont;
         imageTitleLabel.textAlignment = NSTextAlignmentCenter;

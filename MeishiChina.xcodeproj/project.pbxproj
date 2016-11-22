@@ -20,7 +20,6 @@
 		0F8F46311DDD57F2001DDF67 /* MCMiddleNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F46301DDD57F2001DDF67 /* MCMiddleNavigationController.m */; };
 		0F8F46341DDD5827001DDF67 /* MCSurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8F46331DDD5827001DDF67 /* MCSurveyViewController.m */; };
 		0F9194D11DD1B2A70008A89E /* MCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F9194D01DD1B2A70008A89E /* MCResources.bundle */; };
-		0FB215941DE15FDC00A33D23 /* MCRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FB215931DE15FDC00A33D23 /* MCRefreshControl.m */; };
 		0FBB10601DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FBB105F1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		0FCA433F1DDB57F000F338B7 /* MCTableViewPlain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FCA433E1DDB57F000F338B7 /* MCTableViewPlain.xib */; };
 		0FCD781A1DCF254B00619C09 /* AppConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FCD78191DCF254B00619C09 /* AppConfig.m */; };
@@ -93,8 +92,6 @@
 		0F8F46321DDD5827001DDF67 /* MCSurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSurveyViewController.h; sourceTree = "<group>"; };
 		0F8F46331DDD5827001DDF67 /* MCSurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSurveyViewController.m; sourceTree = "<group>"; };
 		0F9194D01DD1B2A70008A89E /* MCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MCResources.bundle; sourceTree = "<group>"; };
-		0FB215921DE15FDC00A33D23 /* MCRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRefreshControl.h; sourceTree = "<group>"; };
-		0FB215931DE15FDC00A33D23 /* MCRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRefreshControl.m; sourceTree = "<group>"; };
 		0FBB105E1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		0FBB105F1DD2C93B002D1854 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		0FCA433E1DDB57F000F338B7 /* MCTableViewPlain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCTableViewPlain.xib; sourceTree = "<group>"; };
@@ -462,8 +459,6 @@
 				5251243EF5548606F26B5670 /* MCTextField.m */,
 				52512E994A29E46CDE5CC088 /* MCScrollView.h */,
 				525125E579228A1FC36DD25C /* MCScrollView.m */,
-				0FB215921DE15FDC00A33D23 /* MCRefreshControl.h */,
-				0FB215931DE15FDC00A33D23 /* MCRefreshControl.m */,
 				5251225FC084006E47357377 /* MCButton.h */,
 				52512EF3652144C9B2C9C963 /* MCButton.m */,
 				0F0D10021DDC46E50009648A /* MCBarButtonItem.h */,
@@ -692,7 +687,6 @@
 				0F06A79B1DCEF65500753B8E /* main.m in Sources */,
 				0FCD781A1DCF254B00619C09 /* AppConfig.m in Sources */,
 				0FCD78271DCF2DE100619C09 /* MCLastNavigationController.m in Sources */,
-				0FB215941DE15FDC00A33D23 /* MCRefreshControl.m in Sources */,
 				52512CD488E18C51FBA7AA44 /* MCAvatarTableViewCell.m in Sources */,
 				5251254D80850E42C50F8B2D /* MCCommonTableViewCell.m in Sources */,
 				52512CB99682054A58C7C4C8 /* MCAboutTableViewCell.m in Sources */,

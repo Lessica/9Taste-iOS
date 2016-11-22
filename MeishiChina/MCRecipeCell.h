@@ -7,7 +7,11 @@
 //
 
 #import "MCTableViewCell.h"
+#import "MCLabel.h"
 
 @interface MCRecipeCell : MCTableViewCell
+@property (nonatomic, strong) YYAnimatedImageView *backgroundImageView;
+@property (nonatomic, strong) MCLabel *imageTitleLabel;
 
+- (void)resizeImageTitle;
 @end

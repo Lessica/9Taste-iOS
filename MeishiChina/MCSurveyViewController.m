@@ -166,10 +166,15 @@
 #pragma mark - MCSurveyViewDelegate
 
 - (void)surveyViewDidChanged:(MCSurveyView *)view {
+    NSNumber *userId = MNet.userState[MCNetworkUserStateKeyUserID];
+    if (!userId) {
+        [self.navigationController.view makeToast:NSLocalizedString(@"Please Login", nil)];
+        return;
+    }
     NSDictionary *requestDictionary = @{
             @"action": @"rate",
             @"form": @{
-                    @"user_id": MNet.userState[MCNetworkUserStateKeyUserID],
+                    @"user_id": userId,
                     @"feedbacks": @[
                             @{
                                     @"recipe_id": view.surveyDict[kMCSurveyKeyRecipeId],
